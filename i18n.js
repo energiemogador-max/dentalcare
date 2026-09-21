@@ -11,6 +11,14 @@
         "nav.aria": "Main",
         "footnav.aria": "Footer",
         "lang.label": "Language",
+        "alt.clinic": "Modern dental treatment room with a green chair and zellige tile detail",
+        "alt.riad": "Riad courtyard with a tiled plunge pool and carved cedar ceiling",
+        "alt.marrakech": "Courtyard in Marrakech with a tiled fountain and orange tree",
+        "alt.agafay": "Private tent camp in the Agafay desert at sunset",
+        "alt.casablanca": "Hassan II Mosque and its minaret beside the Atlantic in Casablanca",
+        "alt.essaouira": "Stone ramparts and blue fishing boats at Essaouira",
+        "alt.consultation": "Dentist showing a treatment plan on a tablet during a consultation",
+        "alt.ceramic": "Hand-cut zellige tiles forming an eight-point star beside a tray of ceramic tiles",
         "nav.treatments": "Treatments",
         "nav.why": "Why Morocco",
         "nav.journey": "Your journey",
@@ -136,6 +144,14 @@
         "nav.aria": "Principale",
         "footnav.aria": "Pied de page",
         "lang.label": "Langue",
+        "alt.clinic": "Salle de soins dentaires moderne avec fauteuil vert et détail en zellige",
+        "alt.riad": "Cour de riad avec bassin carrelé et plafond en cèdre sculpté",
+        "alt.marrakech": "Cour à Marrakech avec fontaine en zellige et oranger",
+        "alt.agafay": "Camp de tentes privé dans le désert d'Agafay au coucher du soleil",
+        "alt.casablanca": "Mosquée Hassan II et son minaret au bord de l'Atlantique à Casablanca",
+        "alt.essaouira": "Remparts en pierre et bateaux de pêche bleus à Essaouira",
+        "alt.consultation": "Dentiste présentant un plan de traitement sur une tablette lors d'une consultation",
+        "alt.ceramic": "Zelliges taillés à la main formant une étoile à huit branches à côté d'un plateau de carreaux en céramique",
         "nav.treatments": "Traitements",
         "nav.why": "Le Maroc",
         "nav.journey": "Parcours",
@@ -261,6 +277,14 @@
         "nav.aria": "Principal",
         "footnav.aria": "Pie de página",
         "lang.label": "Idioma",
+        "alt.clinic": "Sala de tratamiento dental moderna con sillón verde y detalle de zellige",
+        "alt.riad": "Patio de un riad con piscina alicatada y techo de cedro tallado",
+        "alt.marrakech": "Patio en Marrakech con fuente de zellige y naranjo",
+        "alt.agafay": "Campamento privado de tiendas en el desierto de Agafay al atardecer",
+        "alt.casablanca": "Mezquita Hassan II y su alminar junto al Atlántico en Casablanca",
+        "alt.essaouira": "Murallas de piedra y barcas de pesca azules en Essaouira",
+        "alt.consultation": "Dentista mostrando un plan de tratamiento en una tableta durante una consulta",
+        "alt.ceramic": "Zellige cortado a mano formando una estrella de ocho puntas junto a una bandeja de azulejos de cerámica",
         "nav.treatments": "Tratamientos",
         "nav.why": "Marruecos",
         "nav.journey": "Viaje",
@@ -414,6 +438,7 @@
 
         document.querySelectorAll('[data-i18n]').forEach((el) => { el.textContent = t(el.dataset.i18n); });
         document.querySelectorAll('[data-i18n-aria-label]').forEach((el) => { el.setAttribute('aria-label', t(el.dataset.i18nAriaLabel)); });
+        document.querySelectorAll('[data-i18n-alt]').forEach((el) => { el.setAttribute('alt', t(el.dataset.i18nAlt)); });
         document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => { el.setAttribute('placeholder', t(el.dataset.i18nPlaceholder)); });
         document.querySelectorAll('[data-lang]').forEach((btn) => {
             btn.setAttribute('aria-pressed', String(btn.dataset.lang === current));

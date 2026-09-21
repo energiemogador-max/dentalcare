@@ -409,7 +409,7 @@ p { text-wrap: pretty; }
     background: #F5D3A0;
 }
 
-.scene { width: 100%; height: 100%; }
+.scene { width: 100%; height: 100%; object-fit: cover; }
 
 @media (prefers-reduced-motion: no-preference) {
     .hero-art { animation: arch-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
@@ -420,19 +420,27 @@ p { text-wrap: pretty; }
 @keyframes doorway-open { from { transform: translateY(38%); } }
 
 /* Treatments */
+.treatments-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.62fr) minmax(0, 1.38fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+}
+
 .treatment-list { border-top: 2px solid var(--ink); }
 
 .treatment {
     display: grid;
-    grid-template-columns: 88px minmax(0, 1fr) minmax(0, 1.1fr) 14rem;
+    grid-template-columns: 88px minmax(0, 1fr);
     gap: 0.5rem clamp(1.25rem, 3vw, 2.5rem);
-    align-items: center;
     padding-block: 1.75rem;
     border-bottom: 1px solid var(--line);
 }
 
-.swatch { width: 88px; height: 88px; }
-.treatment .text-link { justify-self: end; text-align: right; }
+.treatment p,
+.treatment .text-link { grid-column: 2; }
+.treatment .swatch { grid-row: span 3; align-self: start; width: 88px; height: 88px; }
+.treatment .text-link { justify-self: start; text-align: left; }
 .treatment p { color: var(--muted); }
 
 /* Why Morocco */
@@ -659,6 +667,9 @@ p { text-wrap: pretty; }
 .plan-copy p { max-width: 28rem; color: rgba(245, 247, 244, 0.86); }
 .plan-copy .plan-note { margin-top: 1.5rem; font-weight: 500; color: var(--saffron); }
 
+.plan-art { margin-top: 2.5rem; max-width: 300px; }
+.plan-art .arch { background: var(--zellige-deep); }
+
 .form-panel {
     padding: clamp(1.5rem, 3vw, 2.5rem);
     background: var(--porcelain);
@@ -749,14 +760,12 @@ p { text-wrap: pretty; }
 @media (max-width: 1000px) {
     .arcade { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 3rem; }
 
-    .treatment { grid-template-columns: 88px minmax(0, 1fr); }
-    .treatment p,
-    .treatment .text-link { grid-column: 2; }
-    .treatment .swatch { grid-row: span 3; align-self: start; }
-    .treatment .text-link { justify-self: start; text-align: left; }
 }
 
 @media (max-width: 900px) {
+    .treatments-layout { grid-template-columns: 1fr; }
+    .treatments-art { max-width: 320px; }
+
     .hero-grid,
     .why-grid,
     .patients-grid,
