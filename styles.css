@@ -624,6 +624,21 @@ p { text-wrap: pretty; }
 .package .tick-list { margin-bottom: 2rem; color: var(--muted); }
 .package .btn { margin-top: auto; align-self: flex-start; }
 
+/* Package and journey images */
+.package-art { width: 100%; max-width: 220px; margin-bottom: 1.75rem; }
+.package-art .arch { background: var(--porcelain-2); }
+
+.journey-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.journey-head .section-head { margin-bottom: 0; }
+.journey-art .arch { background: var(--porcelain-2); }
+
 /* International patients */
 .patients-grid {
     display: grid;
@@ -772,6 +787,9 @@ p { text-wrap: pretty; }
     .plan-grid { grid-template-columns: 1fr; }
 
     .hero-art { justify-self: center; max-width: 340px; }
+
+    .journey-head { grid-template-columns: 1fr; }
+    .journey-art { max-width: 200px; }
 
     .package-panel { grid-template-columns: 1fr; }
     .package { padding: 2rem 0 0.5rem; }
