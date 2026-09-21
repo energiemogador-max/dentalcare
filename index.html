@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentalCare Morocco | Premium dental care and a Moroccan stay</title>
+    <meta name="description" content="Premium dental care in Morocco for international patients. Implants, veneers and full smile rehabilitation, with travel planning and a stay built around your treatment.">
+    <meta name="theme-color" content="#0E4A45">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon fill='%230E4A45' points='23,12 16.6,13.9 19.8,19.8 13.9,16.6 12,23 10.1,16.6 4.2,19.8 7.4,13.9 1,12 7.4,10.1 4.2,4.2 10.1,7.4 12,1 13.9,7.4 19.8,4.2 16.6,10.1'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body id="top">
+
+    <!-- Shared graphics: star mark, pointed-arch clip, zellige tile patterns, illustrated scenes -->
+    <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="star" viewBox="0 0 24 24">
+                <polygon fill="currentColor" points="23,12 16.6,13.9 19.8,19.8 13.9,16.6 12,23 10.1,16.6 4.2,19.8 7.4,13.9 1,12 7.4,10.1 4.2,4.2 10.1,7.4 12,1 13.9,7.4 19.8,4.2 16.6,10.1"/>
+            </symbol>
+
+            <clipPath id="arch" clipPathUnits="objectBoundingBox">
+                <path d="M0 1 V0.44 C0 0.22 0.34 0.1 0.5 0 C0.66 0.1 1 0.22 1 0.44 V1 Z"/>
+            </clipPath>
+
+            <!-- Zellige tile: eight-point star on a 60px square -->
+            <pattern id="tileGreen" width="60" height="60" patternUnits="userSpaceOnUse">
+                <rect width="60" height="60" fill="#0E4A45"/>
+                <path d="M30 4.5 L37.5 12 L48 12 L48 22.5 L55.5 30 L48 37.5 L48 48 L37.5 48 L30 55.5 L22.5 48 L12 48 L12 37.5 L4.5 30 L12 22.5 L12 12 L22.5 12 Z" fill="#F5F7F4"/>
+                <circle cx="30" cy="30" r="7" fill="#E8B23A"/>
+                <g fill="#2456C9">
+                    <path d="M0 -7 L7 0 L0 7 L-7 0 Z"/>
+                    <path d="M60 -7 L67 0 L60 7 L53 0 Z"/>
+                    <path d="M0 53 L7 60 L0 67 L-7 60 Z"/>
+                    <path d="M60 53 L67 60 L60 67 L53 60 Z"/>
+                </g>
+            </pattern>
+            <pattern id="tileCobalt" width="60" height="60" patternUnits="userSpaceOnUse">
+                <rect width="60" height="60" fill="#2456C9"/>
+                <path d="M30 4.5 L37.5 12 L48 12 L48 22.5 L55.5 30 L48 37.5 L48 48 L37.5 48 L30 55.5 L22.5 48 L12 48 L12 37.5 L4.5 30 L12 22.5 L12 12 L22.5 12 Z" fill="#F5F7F4"/>
+                <circle cx="30" cy="30" r="7" fill="#0E4A45"/>
+                <g fill="#E8B23A">
+                    <path d="M0 -7 L7 0 L0 7 L-7 0 Z"/>
+                    <path d="M60 -7 L67 0 L60 7 L53 0 Z"/>
+                    <path d="M0 53 L7 60 L0 67 L-7 60 Z"/>
+                    <path d="M60 53 L67 60 L60 67 L53 60 Z"/>
+                </g>
+            </pattern>
+            <pattern id="tileSaffron" width="60" height="60" patternUnits="userSpaceOnUse">
+                <rect width="60" height="60" fill="#E8B23A"/>
+                <path d="M30 4.5 L37.5 12 L48 12 L48 22.5 L55.5 30 L48 37.5 L48 48 L37.5 48 L30 55.5 L22.5 48 L12 48 L12 37.5 L4.5 30 L12 22.5 L12 12 L22.5 12 Z" fill="#F5F7F4"/>
+                <circle cx="30" cy="30" r="7" fill="#2456C9"/>
+                <g fill="#0E4A45">
+                    <path d="M0 -7 L7 0 L0 7 L-7 0 Z"/>
+                    <path d="M60 -7 L67 0 L60 7 L53 0 Z"/>
+                    <path d="M0 53 L7 60 L0 67 L-7 60 Z"/>
+                    <path d="M60 53 L67 60 L60 67 L53 60 Z"/>
+                </g>
+            </pattern>
+
+            <linearGradient id="skyMarrakech" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#EFA77F"/><stop offset="0.55" stop-color="#F5D3A0"/><stop offset="1" stop-color="#FAEBD0"/>
+            </linearGradient>
+            <linearGradient id="skyAgafay" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#6A4C7E"/><stop offset="0.5" stop-color="#E48B5C"/><stop offset="1" stop-color="#F6C47C"/>
+            </linearGradient>
+            <linearGradient id="skyCasablanca" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#BFD9DE"/><stop offset="1" stop-color="#F7F1DF"/>
+            </linearGradient>
+            <linearGradient id="skyEssaouira" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#F6D7A2"/><stop offset="1" stop-color="#FBF0DA"/>
+            </linearGradient>
+
+            <g id="scene-marrakech">
+                <rect width="300" height="400" fill="url(#skyMarrakech)"/>
+                <circle cx="215" cy="200" r="50" fill="#FBE7B8"/>
+                <g fill="#B0533A">
+                    <rect x="70" y="150" width="50" height="190"/>
+                    <rect x="80" y="126" width="30" height="26"/>
+                    <rect x="92" y="108" width="6" height="20"/>
+                </g>
+                <circle cx="95" cy="104" r="5" fill="#E8B23A"/>
+                <g fill="#F5D3A0">
+                    <rect x="88" y="170" width="14" height="24" rx="7"/>
+                    <rect x="88" y="212" width="14" height="24" rx="7"/>
+                    <rect x="88" y="254" width="14" height="24" rx="7"/>
+                </g>
+                <rect y="318" width="300" height="82" fill="#8C3F2B"/>
+                <g fill="#A04A33">
+                    <rect x="10" y="298" width="58" height="34"/>
+                    <rect x="130" y="294" width="70" height="38"/>
+                    <rect x="212" y="304" width="60" height="28"/>
+                </g>
+                <path d="M245 340 Q248 270 240 214" stroke="#5B2E22" stroke-width="5" fill="none"/>
+                <path d="M240 214 Q215 198 190 214 Q216 204 240 218Z M240 214 Q265 194 292 208 Q264 202 242 218Z M240 214 Q228 184 214 176 Q232 190 242 216Z M240 214 Q258 182 274 176 Q254 190 242 216Z" fill="#3F5F3A"/>
+            </g>
+
+            <g id="scene-agafay">
+                <rect width="300" height="400" fill="url(#skyAgafay)"/>
+                <circle cx="150" cy="235" r="44" fill="#FCE6B0"/>
+                <path d="M0 250 Q75 222 150 250 T300 240 V400 H0Z" fill="#C9733E"/>
+                <path d="M0 292 Q90 262 190 296 T300 282 V400 H0Z" fill="#A65A2C"/>
+                <path d="M206 298 L236 262 L266 298Z" fill="#F3E3C3"/>
+                <path d="M228 298 L236 279 L244 298Z" fill="#7C3D20"/>
+                <path d="M0 344 Q100 312 200 348 T300 334 V400 H0Z" fill="#7C3D20"/>
+            </g>
+
+            <g id="scene-casablanca">
+                <rect width="300" height="400" fill="url(#skyCasablanca)"/>
+                <rect y="270" width="300" height="130" fill="#2B7A87"/>
+                <g fill="none" stroke="#8FC5CB" stroke-width="3" stroke-linecap="round">
+                    <path d="M0 300 Q25 292 50 300 T100 300 T150 300 T200 300 T250 300 T300 300"/>
+                    <path d="M0 334 Q25 326 50 334 T100 334 T150 334 T200 334 T250 334 T300 334"/>
+                    <path d="M0 368 Q25 360 50 368 T100 368 T150 368 T200 368 T250 368 T300 368"/>
+                </g>
+                <rect x="90" y="238" width="150" height="40" fill="#F4EEDD"/>
+                <rect x="100" y="226" width="90" height="12" fill="#1F7A5C"/>
+                <rect x="196" y="70" width="30" height="170" fill="#F4EEDD"/>
+                <rect x="203" y="52" width="16" height="20" fill="#F4EEDD"/>
+                <rect x="209" y="34" width="4" height="20" fill="#E8B23A"/>
+                <rect x="196" y="110" width="30" height="8" fill="#1F7A5C"/>
+                <g fill="#2B7A87">
+                    <rect x="205" y="132" width="12" height="20" rx="6"/>
+                    <rect x="205" y="172" width="12" height="20" rx="6"/>
+                    <rect x="108" y="248" width="12" height="22" rx="6"/>
+                    <rect x="136" y="248" width="12" height="22" rx="6"/>
+                    <rect x="164" y="248" width="12" height="22" rx="6"/>
+                </g>
+            </g>
+
+            <g id="scene-essaouira">
+                <rect width="300" height="400" fill="url(#skyEssaouira)"/>
+                <circle cx="230" cy="140" r="30" fill="#F0A64A"/>
+                <rect y="262" width="300" height="138" fill="#1F5FA8"/>
+                <g fill="none" stroke="#DCEBF5" stroke-width="3" stroke-linecap="round">
+                    <path d="M180 310 Q200 303 220 310 T260 310 T300 310"/>
+                    <path d="M150 350 Q175 343 200 350 T250 350 T300 350"/>
+                </g>
+                <rect y="192" width="176" height="106" fill="#EADFC8"/>
+                <g fill="#EADFC8">
+                    <rect x="6" y="176" width="14" height="16"/>
+                    <rect x="34" y="176" width="14" height="16"/>
+                    <rect x="62" y="176" width="14" height="16"/>
+                    <rect x="90" y="176" width="14" height="16"/>
+                    <rect x="118" y="176" width="14" height="16"/>
+                    <rect x="146" y="176" width="14" height="16"/>
+                </g>
+                <path d="M106 298 V254 Q106 234 124 234 Q142 234 142 254 V298Z" fill="#2456C9"/>
+                <g fill="none" stroke="#10332F" stroke-width="2" stroke-linecap="round">
+                    <path d="M196 84 q8 -8 16 0 q8 -8 16 0"/>
+                    <path d="M240 62 q6 -6 12 0 q6 -6 12 0"/>
+                </g>
+            </g>
+        </defs>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+        <div class="wrap header-inner">
+            <a class="logo" href="#top" aria-label="DentalCare Morocco, back to top">
+                <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+                <span>DentalCare Morocco</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">Menu</span>
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+            <nav id="site-nav" class="site-nav" aria-label="Main">
+                <ul>
+                    <li><a href="#treatments">Treatments</a></li>
+                    <li><a href="#why-morocco">Why Morocco</a></li>
+                    <li><a href="#journey">Your journey</a></li>
+                    <li><a href="#stay">Your stay</a></li>
+                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#international">Patients</a></li>
+                </ul>
+                <a class="btn btn-primary btn-sm" href="#plan">Get my personalized plan</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <h1>
+                        <span>Your new smile.</span>
+                        <span>Your Moroccan journey.</span>
+                    </h1>
+                    <p class="lede">Premium dental care in Morocco for international patients.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#plan">Get my personalized treatment plan</a>
+                        <a class="btn btn-outline" href="#journey">Explore dental tourism</a>
+                    </div>
+                    <ul class="assurances">
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>Remote consultation</li>
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>Personalized treatment plan</li>
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>Travel assistance</li>
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>Multilingual support</li>
+                    </ul>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="hero-arch">
+                        <svg viewBox="0 0 480 640" preserveAspectRatio="xMidYMid slice"><rect width="480" height="640" fill="url(#tileGreen)"/></svg>
+                    </div>
+                    <div class="hero-keyline"></div>
+                    <div class="doorway">
+                        <svg class="scene" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><use href="#scene-marrakech"/></svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatments -->
+        <section class="section" id="treatments">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Dental care without borders</h2>
+                    <p>Personalized treatments designed for international patients.</p>
+                </div>
+                <ul class="treatment-list">
+                    <li class="treatment">
+                        <svg class="swatch" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" fill="url(#tileGreen)"/></svg>
+                        <h3>Implants</h3>
+                        <p>Restore function and confidence with personalized implant treatment.</p>
+                        <a class="text-link" href="#plan" data-treatment="implants">Ask about implants</a>
+                    </li>
+                    <li class="treatment">
+                        <svg class="swatch" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" fill="url(#tileCobalt)"/></svg>
+                        <h3>Veneers and cosmetic dentistry</h3>
+                        <p>Create a natural-looking smile designed around your face.</p>
+                        <a class="text-link" href="#plan" data-treatment="veneers">Ask about veneers</a>
+                    </li>
+                    <li class="treatment">
+                        <svg class="swatch" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" fill="url(#tileSaffron)"/></svg>
+                        <h3>Full smile rehabilitation</h3>
+                        <p>Comprehensive treatment plans coordinated around your stay.</p>
+                        <a class="text-link" href="#plan" data-treatment="rehabilitation">Ask about rehabilitation</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Why Morocco -->
+        <section class="section section-tint" id="why-morocco">
+            <div class="wrap why-grid">
+                <div class="why-text">
+                    <h2>Advanced dental care. A destination worth discovering.</h2>
+                    <ul class="tick-list">
+                        <li>International patients welcome</li>
+                        <li>Treatment planning before arrival</li>
+                        <li>English, French and Arabic communication</li>
+                        <li>Airport and accommodation assistance</li>
+                        <li>Treatment schedule organized around travel</li>
+                        <li>Post-treatment follow-up</li>
+                    </ul>
+                </div>
+                <div class="duo">
+                    <figure>
+                        <div class="arch arch-clinic">
+                            <svg viewBox="0 0 480 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+                                <rect width="480" height="640" fill="url(#tileCobalt)"/>
+                                <circle cx="240" cy="330" r="128" fill="#F5F7F4"/>
+                                <svg x="160" y="250" width="160" height="160" viewBox="0 0 64 64">
+                                    <path d="M32 15 C28 9 17 8 14 17 C11 26 17 32 18 40 C19 47 20 56 24 56 C28 56 28 44 32 44 C36 44 36 56 40 56 C44 56 45 47 46 40 C47 32 53 26 50 17 C47 8 36 9 32 15 Z" fill="#fff" stroke="#0E4A45" stroke-width="2.5" stroke-linejoin="round"/>
+                                </svg>
+                            </svg>
+                        </div>
+                        <figcaption>Modern dental clinic</figcaption>
+                    </figure>
+                    <figure class="duo-offset">
+                        <div class="arch">
+                            <svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene-agafay"/></svg>
+                        </div>
+                        <figcaption>Morocco</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey -->
+        <section class="section" id="journey">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Your dental journey</h2>
+                    <p>Six steps, from your first photos to your follow-up plan.</p>
+                </div>
+
+                <div class="journey" data-journey>
+                    <div class="phase" style="--n:2">
+                        <h3 class="phase-title">From home</h3>
+                        <ol class="steps">
+                            <li class="step" style="--i:0">
+                                <span class="step-num" aria-hidden="true">1</span>
+                                <h4>Online consultation</h4>
+                                <p>Send your photos, X-rays and treatment goals.</p>
+                            </li>
+                            <li class="step" style="--i:1">
+                                <span class="step-num" aria-hidden="true">2</span>
+                                <h4>Personalized plan</h4>
+                                <p>Receive your proposed treatment and estimated stay.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="phase" style="--n:3">
+                        <h3 class="phase-title">In Morocco</h3>
+                        <ol class="steps" start="3">
+                            <li class="step" style="--i:2">
+                                <span class="step-num" aria-hidden="true">3</span>
+                                <h4>Arrive in Morocco</h4>
+                                <p>Airport pickup and accommodation assistance.</p>
+                            </li>
+                            <li class="step" style="--i:3">
+                                <span class="step-num" aria-hidden="true">4</span>
+                                <h4>Dental treatment</h4>
+                                <p>Your appointments are organized around your itinerary.</p>
+                            </li>
+                            <li class="step" style="--i:4">
+                                <span class="step-num" aria-hidden="true">5</span>
+                                <h4>Discover Morocco</h4>
+                                <p>Enjoy carefully selected experiences between treatment stages.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="phase" style="--n:1">
+                        <h3 class="phase-title">Back home</h3>
+                        <ol class="steps" start="6">
+                            <li class="step" style="--i:5">
+                                <span class="step-num" aria-hidden="true">6</span>
+                                <h4>Return home</h4>
+                                <p>Receive your treatment documentation and follow-up plan.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stay -->
+        <section class="section on-dark" id="stay">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Your treatment, your holiday</h2>
+                    <p>Between appointments, discover Morocco.</p>
+                </div>
+                <div class="arcade">
+                    <figure>
+                        <div class="arch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene-marrakech"/></svg></div>
+                        <figcaption>
+                            <h3>Marrakech</h3>
+                            <ul><li>Medina</li><li>Souks</li><li>Majorelle Garden</li><li>Bahia Palace</li></ul>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <div class="arch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene-agafay"/></svg></div>
+                        <figcaption>
+                            <h3>Agafay</h3>
+                            <ul><li>Desert landscapes</li><li>Sunset</li><li>Private experience</li></ul>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <div class="arch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene-casablanca"/></svg></div>
+                        <figcaption>
+                            <h3>Casablanca</h3>
+                            <ul><li>Hassan II Mosque</li><li>Corniche</li><li>Art Deco city</li></ul>
+                        </figcaption>
+                    </figure>
+                    <figure>
+                        <div class="arch"><svg viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#scene-essaouira"/></svg></div>
+                        <figcaption>
+                            <h3>Essaouira</h3>
+                            <ul><li>Atlantic coast</li><li>Medina</li><li>Relaxation</li></ul>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages -->
+        <section class="section" id="packages">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>Packages</h2>
+                    <p>We don't publish fixed prices. Each package is a combination built around your treatment and your dates.</p>
+                </div>
+                <div class="package-panel">
+                    <article class="package">
+                        <h3>Smile + Stay</h3>
+                        <ul class="tick-list">
+                            <li>Dental treatment</li>
+                            <li>Hotel coordination</li>
+                            <li>Airport transfer</li>
+                            <li>Local transportation</li>
+                            <li>Optional tours</li>
+                        </ul>
+                        <a class="btn btn-primary" href="#plan" data-package="smile-stay">Build my dental journey</a>
+                    </article>
+                    <article class="package">
+                        <h3>Smile + Discover</h3>
+                        <ul class="tick-list">
+                            <li>Dental treatment</li>
+                            <li>Accommodation</li>
+                            <li>Transfers</li>
+                            <li>Marrakech experience</li>
+                            <li>Private sightseeing</li>
+                        </ul>
+                        <a class="btn btn-primary" href="#plan" data-package="smile-discover">Build my dental journey</a>
+                    </article>
+                    <article class="package">
+                        <h3>Full Morocco experience</h3>
+                        <ul class="tick-list">
+                            <li>Dental treatment</li>
+                            <li>Accommodation</li>
+                            <li>Transfers</li>
+                            <li>Casablanca</li>
+                            <li>Marrakech</li>
+                            <li>Optional desert or coast experience</li>
+                        </ul>
+                        <a class="btn btn-primary" href="#plan" data-package="full-experience">Build my dental journey</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- International patients -->
+        <section class="section section-tint" id="international">
+            <div class="wrap patients-grid">
+                <div>
+                    <div class="section-head">
+                        <h2>International patients</h2>
+                        <p>World-class dental care with convenient entry points from around the globe.</p>
+                    </div>
+                    <svg class="route" viewBox="0 0 400 280" role="img" aria-label="Routes from Europe and from Africa meeting in Morocco">
+                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round">
+                            <path d="M300 34 C 280 120, 200 150, 128 162"/>
+                            <path d="M330 236 C 290 190, 210 176, 136 172"/>
+                        </g>
+                        <circle cx="300" cy="34" r="6" fill="#2456C9"/>
+                        <circle cx="330" cy="236" r="6" fill="#2456C9"/>
+                        <use href="#star" x="102" y="146" width="36" height="36" style="color:#E8B23A"/>
+                        <text x="312" y="38">Europe</text>
+                        <text x="342" y="240">Africa</text>
+                        <text x="120" y="208" text-anchor="middle">Morocco</text>
+                    </svg>
+                </div>
+                <div class="patients-detail">
+                    <div class="origin">
+                        <h3>From Europe</h3>
+                        <p>France, Belgium, Spain, UK, Switzerland, Netherlands.</p>
+                    </div>
+                    <div class="origin">
+                        <h3>From Africa</h3>
+                        <p>West Africa, Central Africa, North Africa, and other international patients.</p>
+                    </div>
+                    <div class="origin">
+                        <h3>Dedicated information</h3>
+                        <ul class="tick-list">
+                            <li>Travel requirements and documentation</li>
+                            <li>Payment options and currency</li>
+                            <li>Accommodation guidelines</li>
+                            <li>Treatment planning support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan request -->
+        <section class="section on-dark" id="plan">
+            <div class="wrap plan-grid">
+                <div class="plan-copy">
+                    <h2>Get your personalized treatment plan</h2>
+                    <p>Tell us what you would like to change. We'll ask for your photos and X-rays, then send your proposed treatment and estimated stay.</p>
+                    <p class="plan-note">English, French and Arabic spoken.</p>
+                </div>
+
+                <!-- Replace YOUR_FORM_ID with your Formspree form ID (or point action at any endpoint that accepts a POST). -->
+                <form class="form-panel" id="plan-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">Full name</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="whatsapp">WhatsApp <span class="hint">(optional)</span></label>
+                            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="country">Country</label>
+                            <input id="country" name="country" type="text" autocomplete="country-name" required>
+                        </div>
+                        <div class="field">
+                            <label for="treatment">Treatment</label>
+                            <select id="treatment" name="treatment">
+                                <option value="not-sure">Not sure yet</option>
+                                <option value="implants">Implants</option>
+                                <option value="veneers">Veneers and cosmetic dentistry</option>
+                                <option value="rehabilitation">Full smile rehabilitation</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="package">Package</label>
+                            <select id="package" name="package">
+                                <option value="not-sure">Not sure yet</option>
+                                <option value="smile-stay">Smile + Stay</option>
+                                <option value="smile-discover">Smile + Discover</option>
+                                <option value="full-experience">Full Morocco experience</option>
+                            </select>
+                        </div>
+                        <div class="field field-wide">
+                            <label for="dates">Preferred travel dates <span class="hint">(optional)</span></label>
+                            <input id="dates" name="dates" type="text" placeholder="For example, March or the last two weeks of June">
+                        </div>
+                        <div class="field field-wide">
+                            <label for="message">Your treatment goals</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                    </div>
+                    <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Get my plan</button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <svg class="footer-band" width="100%" height="60" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileGreen)"/></svg>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="logo" href="#top">
+                        <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+                        <span>DentalCare Morocco</span>
+                    </a>
+                    <p>Premium dental care combined with the Moroccan experience. Transform your smile, discover Morocco.</p>
+                </div>
+                <nav aria-label="Footer">
+                    <h2 class="footer-title">Explore</h2>
+                    <ul>
+                        <li><a href="#treatments">Treatments</a></li>
+                        <li><a href="#why-morocco">Why Morocco</a></li>
+                        <li><a href="#packages">Packages</a></li>
+                        <li><a href="#international">International patients</a></li>
+                        <li><a href="#plan">Get my plan</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="footer-title">Follow</h2>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> DentalCare Morocco. Premium dental hospitality.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
