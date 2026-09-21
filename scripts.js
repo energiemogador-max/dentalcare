@@ -33,7 +33,7 @@
         }
     });
 
-    window.matchMedia('(min-width: 1121px)').addEventListener('change', (e) => {
+    window.matchMedia('(min-width: 1261px)').addEventListener('change', (e) => {
         if (e.matches) setMenu(false);
     });
 
@@ -96,7 +96,7 @@
 
             button.disabled = true;
             status.dataset.state = '';
-            status.textContent = 'Sending...';
+            status.textContent = window.DC ? window.DC.t('f.sending') : 'Sending...';
 
             try {
                 const response = await fetch(form.action, {
@@ -107,10 +107,10 @@
                 if (!response.ok) throw new Error('Request failed');
                 form.reset();
                 status.dataset.state = 'success';
-                status.textContent = 'Thank you. We will reply with the next steps.';
+                status.textContent = window.DC ? window.DC.t('f.success') : 'Thank you. We will reply with the next steps.';
             } catch (err) {
                 status.dataset.state = 'error';
-                status.textContent = 'The request did not go through. Please try again.';
+                status.textContent = window.DC ? window.DC.t('f.error') : 'The request did not go through. Please try again.';
             } finally {
                 button.disabled = false;
             }
