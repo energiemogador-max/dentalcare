@@ -46,7 +46,20 @@ jobs:
 
       - run: npm run build
 
+      # Tells GitHub Pages not to run the output through Jekyll. Without it,
+      # Jekyll strips files and folders beginning with an underscore.
+      - name: Disable Jekyll processing
+        run: touch _site/.nojekyll
+
+      # enablement: true asks the API to put Pages into "GitHub Actions" build
+      # mode. If the repo is still on "Deploy from a branch", GitHub runs its
+      # own Jekyll builder against this repo -- which fails, because Jekyll
+      # cannot parse Nunjucks (.njk layouts, {% set %} in sitemap.njk).
+      # This may not have permission to change the setting on its own, in
+      # which case set it by hand: Settings -> Pages -> Source: GitHub Actions.
       - uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - uses: actions/upload-pages-artifact@v3
         with:

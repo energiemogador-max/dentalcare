@@ -131,9 +131,28 @@ would leave Pages with nothing to serve.
 `.github/workflows/deploy.yml` handles this: it builds on every push to
 `main` and publishes `_site/`.
 
-> **One-time setup required:** repo **Settings -> Pages -> Build and
-> deployment -> Source: "GitHub Actions"** (not "Deploy from a branch").
-> Until that's switched, the workflow runs but nothing is published.
+> ## ⚠️ REQUIRED ONE-TIME SETTING
+>
+> **Settings -> Pages -> Build and deployment -> Source: "GitHub Actions"**
+>
+> It currently reads "Deploy from a branch". While it does, GitHub ignores
+> the workflow below and instead runs **its own Jekyll builder** against this
+> repo. That build **fails**, because Jekyll cannot parse Nunjucks:
+>
+> ```
+> Build Warning: Layout 'layouts/base.njk' ... does not exist
+> Liquid Exception: Liquid syntax error (line 11): Unknown tag 'set'
+>                   in src/sitemap.njk
+> ```
+>
+> Those errors are not a bug in the site -- the Eleventy build succeeds
+> locally and in the workflow. They are Jekyll being pointed at a
+> non-Jekyll project. Changing the Source setting stops the Jekyll builder
+> running at all.
+>
+> The workflow passes `enablement: true` to `actions/configure-pages`, which
+> asks the API to make this change automatically. That may lack permission
+> depending on repo settings, so treat the manual switch as the real fix.
 
 Project Pages sites serve from a `/reponame/` subpath. All asset and
 navigation paths are relative, so this works without configuration -- do not
