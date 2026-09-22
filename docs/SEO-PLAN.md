@@ -21,23 +21,26 @@
 
 ---
 
-## 1. `[OWNER]` Blocking decision: build system
+## 1. Build system — DECIDED: Eleventy
 
 This plan takes the site from 3 pages to **~70 French + ~25 English + ~25 Spanish ≈ 120 pages.** Hand-maintaining 120 static HTML files is not viable — one nav change means 120 edits, and drift is guaranteed.
 
-**Recommendation: migrate to [Astro](https://astro.build).** Reasons specific to this project:
+**Chosen: [Eleventy (11ty)](https://www.11ty.dev).** Nunjucks templates look like ordinary HTML, which keeps the migration close to the existing hand-written files, and it outputs plain static HTML so hosting stays trivial.
 
-- Built-in i18n routing — solves the `/`, `/en/`, `/es/` structure natively
-- `@astrojs/sitemap` auto-generates the sitemap **with hreflang**, removing an entire class of manual error
-- Built-in image optimization (AVIF/WebP, responsive `srcset`) — directly serves the Core Web Vitals target, and the current site ships 2.4MB of images
-- Ships zero JavaScript by default — ideal for a content site
-- Outputs plain static HTML, so hosting stays trivial
+**Deploy to Cloudflare Pages or Netlify**, not GitHub Pages — auto-build on push, visible build logs, instant rollback. A build step means a broken build stops the site updating; those three things are the mitigation.
 
-**Cost:** adds a build step. If the build breaks, the site stops updating. Mitigated by deploying to **Cloudflare Pages or Netlify** (auto-build on push, build logs, instant rollback) rather than GitHub Pages.
+### What Eleventy does not give for free
 
-**Alternative if the build step is unacceptable:** Eleventy (simpler, Nunjucks templates look like HTML). Worse image story.
+Astro would have provided these built-in. On Eleventy they are explicit build tasks — **do not let them silently drop**, each one maps to a requirement in §9:
 
-> ⚠️ Do not start Phase 1 until this is decided. Everything downstream depends on it.
+| Need | Eleventy implementation |
+|---|---|
+| Image optimization (AVIF/WebP, responsive `srcset`) | `@11ty/eleventy-img` plugin, invoked via a shortcode. Required — the site currently ships 2.4MB of images. |
+| Sitemap **with hreflang** | No equivalent of `@astrojs/sitemap`. Write a Nunjucks template that generates `sitemap.xml` from collections, emitting the full `xhtml:link` alternate cluster per URL. |
+| i18n routing (`/`, `/en/`, `/es/`) | Directory-scoped data files + computed `permalink`. Each page needs a `translationKey` so the hreflang cluster and language switcher can resolve siblings. |
+| Per-page hreflang tags | Derived from `translationKey` in the shared layout. Must be reciprocal — verify after migration. |
+
+> ⚠️ The `translationKey` convention is load-bearing: the language switcher, the per-page hreflang cluster, and the sitemap alternates all resolve from it. Establish it in Phase 0 before any content pages exist.
 
 ---
 
@@ -281,7 +284,7 @@ Slugs are expensive to change after indexing. Validate, then build.
 
 | Phase | Contents | Gate to start |
 |---|---|---|
-| **0** | Buy domain · Astro migration · shared layout · schema base · fonts self-hosted · deploy pipeline | §1 decided |
+| **0** | Buy domain · Eleventy migration · shared layout · `translationKey` convention · eleventy-img shortcode · sitemap+hreflang template · schema base · fonts self-hosted · deploy pipeline | §10 validation done |
 | **1** | Tier 4 trust cluster + legal pages | §2.2 dentist details in hand |
 | **2** | Tier 1 treatment pillars | Phase 0 done |
 | **3** | Tier 2 price cluster | §2.1 price ranges approved |
