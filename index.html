@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DentalCare Morocco | Premium dental care and a Moroccan stay</title>
     <meta name="description" content="Premium dental care in Morocco for international patients. Implants, veneers and full smile rehabilitation, with travel planning and a stay built around your treatment.">
-    <!-- Replace your-domain.com with the live domain: social crawlers need absolute URLs. -->
+    <!-- LAUNCH CHECKLIST: search this file for LAUNCH- and replace every hit.
+         1. LAUNCH-DOMAIN  -> your live domain, e.g. atlassmilemorocco.com (no https://, no trailing slash)
+         2. LAUNCH-FORM-ID -> your Formspree form ID (the form shows a visible error until you do)
+         Social crawlers require absolute URLs, so the domain cannot be left relative. -->
+    <link rel="canonical" href="https://LAUNCH-DOMAIN/">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DentalCare Morocco">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:locale:alternate" content="es_ES">
+    <meta property="og:url" content="https://LAUNCH-DOMAIN/">
     <meta property="og:title" content="DentalCare Morocco | Premium dental care and a Moroccan stay">
     <meta property="og:description" content="Premium dental care in Morocco for international patients, with travel planning and a stay built around your treatment.">
-    <meta property="og:image" content="https://your-domain.com/images/og-share.jpg">
+    <meta property="og:image" content="https://LAUNCH-DOMAIN/images/og-share.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="DentalCare Morocco: premium dental treatment combined with a stay in Morocco">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0E4A45">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon fill='%230E4A45' points='23,12 16.6,13.9 19.8,19.8 13.9,16.6 12,23 10.1,16.6 4.2,19.8 7.4,13.9 1,12 7.4,10.1 4.2,4.2 10.1,7.4 12,1 13.9,7.4 19.8,4.2 16.6,10.1'/%3E%3C/svg%3E">
@@ -191,7 +202,7 @@
                         <div class="arch">
                             <img src="images/clinic.webp" alt="" data-i18n-alt="alt.clinic" width="900" height="1200" decoding="async" loading="lazy">
                         </div>
-                        <figcaption data-i18n="why.cap1">Modern dental clinic</figcaption>
+                        <figcaption data-i18n="why.cap1">Partner dental practice</figcaption>
                     </figure>
                     <figure class="duo-offset">
                         <div class="arch">
@@ -408,8 +419,9 @@
                     </figure>
                 </div>
 
-                <!-- Replace YOUR_FORM_ID with your Formspree form ID (or point action at any endpoint that accepts a POST). -->
-                <form class="form-panel" id="plan-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <!-- Replace LAUNCH-FORM-ID with your Formspree form ID (or point action at any endpoint that accepts a POST).
+                     Until then scripts.js blocks submission and shows a visible error instead of losing the lead. -->
+                <form class="form-panel" id="plan-form" action="https://formspree.io/f/LAUNCH-FORM-ID" method="POST">
                     <div class="form-grid">
                         <div class="field">
                             <label for="name" data-i18n="f.name">Full name</label>
@@ -487,10 +499,13 @@
                 </nav>
                 <div>
                     <h2 class="footer-title" data-i18n="ft.follow">Follow</h2>
+                    <!-- LAUNCH-SOCIAL: once the profiles exist, wrap each name in
+                         <a href="https://..." rel="me noopener" target="_blank">. Shipping href="#"
+                         gives crawlers dead links and users a jump to the top of the page. -->
                     <ul>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">LinkedIn</a></li>
+                        <li>Instagram</li>
+                        <li>Facebook</li>
+                        <li>LinkedIn</li>
                     </ul>
                 </div>
             </div>
