@@ -63,15 +63,20 @@ Slugs below are informed by observed competitor SERPs, **not** validated volume 
 
 ### Tier 1 — Treatment pillars
 ```
-/implants-dentaires-maroc/
+/implants-dentaires-maroc/          ← ⚠️ singular vs plural UNRESOLVED, see below
 /facettes-dentaires-maroc/
 /all-on-4-maroc/
 /all-on-6-maroc/
-/couronnes-dentaires-maroc/
+/couronne-dentaire-maroc/
 /bridge-dentaire-maroc/
 /blanchiment-dentaire-maroc/
-/rehabilitation-complete-maroc/
 ```
+
+> ⚠️ **`/implants-dentaires-maroc/` — do not lock this slug yet.** It is the highest-value term in the plan and the singular/plural evidence came back genuinely split (see `KEYWORD-VALIDATION.md`). This is the one term worth spending real DataForSEO or GSC credit on before building. Everything else can proceed.
+>
+> Note the pillar currently reads plural while its price page reads `/prix/implant-dentaire-maroc/` (singular). **Whichever form wins, apply it to both** — they must not ship split. Every other Tier 1 ⇄ Tier 2 pair is now consistent.
+
+**Dropped:** `/rehabilitation-complete-maroc/`. No competitor targets this phrase as a standalone page — it appears only as a subsection of All-on-4/All-on-6 content. Built as its own pillar it would cannibalize those two pillars for the same searchers. Fold the content into the All-on-4/6 pillars, or into a guide.
 
 ### Tier 2 — Price cluster (highest commercial intent)
 ```
@@ -81,9 +86,11 @@ Slugs below are informed by observed competitor SERPs, **not** validated volume 
 /prix/all-on-4-maroc/
 /prix/couronne-dentaire-maroc/
 /prix/bridge-dentaire-maroc/
-/prix/blanchiment-maroc/
+/prix/blanchiment-dentaire-maroc/
 /devis-gratuit/                     ← conversion page
 ```
+
+**Currency and format:** Moroccan clinic sites mostly quote MAD, but the two **agency-model** competitors — the closer analog to us — quote French patients in EUR as `à partir de X€`. Use EUR "à partir de" for the French pages. Keep the last-updated date visible (§2.1).
 
 ### Tier 3 — Comparison (intercepts traffic leaking to Turkey)
 ```
@@ -115,12 +122,19 @@ Slugs below are informed by observed competitor SERPs, **not** validated volume 
 /paiement-et-financement/
 ```
 
-### Tier 6 — Geographic (the fast wedge — read §7 guardrails first)
+### Tier 6 — Geographic (contested, not empty — read §7 guardrails first)
 ```
 /patients/france/      /patients/belgique/     /patients/suisse/
 /patients/senegal/     /patients/cote-divoire/ /patients/gabon/
 /patients/cameroun/    /patients/mali/         /patients/congo/
 ```
+
+> **Correction to an earlier assumption.** This plan originally called francophone Africa an under-served wedge. That is wrong. **evitalink.com** — a Morocco-based medical tourism agency with essentially our business model — already runs substantive, non-templated pages for Senegal, Côte d'Ivoire, Cameroon, Gabon, Mauritania and Guinea, with real flight times, visa status, EUR pricing and named partner providers. It already clears all five §7 guardrails.
+>
+> This does not kill the opportunity, it reframes it:
+> - **Senegal, Côte d'Ivoire, Gabon, Cameroun are contested.** Only a genuinely guardrail-compliant page competes. A templated one loses *and* risks a penalty.
+> - **Mali and Congo showed no competitor content** and remain closer to open.
+> - **Our angle against evitalink is depth, not presence.** They are multi-vertical — cardiology, fertility, dental. A dental-only specialist can go deeper on dental for every one of these countries than a generalist will. That is the wedge, not first-mover advantage.
 
 ### Tier 7 — Guides / topical authority
 ```
@@ -258,7 +272,19 @@ The country pages are the fastest route to rankings **and** the fastest route to
 
 ---
 
-## 10. Validation task (do this first)
+## 10. Validation — DONE (structural only)
+
+**Completed.** Findings in [`KEYWORD-VALIDATION.md`](./KEYWORD-VALIDATION.md). Slug corrections from it are already applied to §3 above.
+
+**DataForSEO is still HTTP 401** — no volume or difficulty data was obtainable. Everything validated was structural (page type, singular/plural, competitor architecture, currency), gathered via a **US-localized** search tool. Conclusions about French and African SERPs are therefore weaker than they look; the report labels which ones.
+
+**Still open and worth paying for:**
+1. `/implants-dentaires-maroc/` singular vs plural — the highest-value term, evidence split ~50/50. Spend real credit on this one term.
+2. Re-run the §11 aggregator check against a France-localized SERP.
+3. True volume and difficulty for the whole Tier 1/2 set.
+
+<details>
+<summary>Original validation brief (kept for reference)</summary>
 
 The keyword targets above are inferred from competitor SERP structure, not measured volume. **The DataForSEO MCP integration returns HTTP 401 — it is not authenticated.** Either fix those credentials or use another source to validate, before slugs are locked:
 
@@ -268,11 +294,14 @@ The keyword targets above are inferred from competitor SERP structure, not measu
 
 Slugs are expensive to change after indexing. Validate, then build.
 
+</details>
+
 ---
 
 ## 11. Off-page (the only authority lever, given organic-only)
 
 - **Directory listings:** Dentavacation, MedicalTourismCo, Meilleure Clinique, Bookimed, Dental Departures. ⚠️ Several charge for placement — confirm cost before treating as free.
+  > ⚠️ **Verify these are worth it before spending anything.** Validation found that *none* of these aggregators surfaced in any French-language query, including one naming them directly. That check ran on a US-localized search tool, so it is not conclusive — but re-run it against a France-localized SERP before paying for placement. If it holds, this list is aimed at platforms with little weight in the SERP we are actually trying to win, and the budget belongs in the data study below instead.
 - **Trustpilot** — the review asset the brand *can* own, since Google reviews land on the clinic's profile
 - **Francophone expat communities** — forums and groups for French nationals abroad and for the Moroccan diaspora
 - **Original data as a link magnet:** an annual "Indice des prix du tourisme dentaire" comparing real quoted prices across Morocco/Turkey/Hungary/France with a stated methodology. This is what earns editorial links in this niche; pure service pages do not.
@@ -284,7 +313,7 @@ Slugs are expensive to change after indexing. Validate, then build.
 
 | Phase | Contents | Gate to start |
 |---|---|---|
-| **0** | Buy domain · Eleventy migration · shared layout · `translationKey` convention · eleventy-img shortcode · sitemap+hreflang template · schema base · fonts self-hosted · deploy pipeline | §10 validation done |
+| **0** | Buy domain · Eleventy migration · shared layout · `translationKey` convention · eleventy-img shortcode · sitemap+hreflang template · schema base · fonts self-hosted · deploy pipeline | ✅ unblocked — §10 done, no content slugs needed yet |
 | **1** | Tier 4 trust cluster + legal pages | §2.2 dentist details in hand |
 | **2** | Tier 1 treatment pillars | Phase 0 done |
 | **3** | Tier 2 price cluster | §2.1 price ranges approved |
