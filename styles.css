@@ -323,12 +323,16 @@ p { text-wrap: pretty; }
     border-radius: 999px;
 }
 
-.lang button {
+.lang a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-width: 40px;
     min-height: 34px;
     padding: 0 0.6rem;
     font: 600 0.8rem/1 var(--font-body);
     color: var(--ink);
+    text-decoration: none;
     background: none;
     border: 0;
     border-radius: 999px;
@@ -336,8 +340,8 @@ p { text-wrap: pretty; }
     transition: background-color 0.2s, color 0.2s;
 }
 
-.lang button:hover { background: var(--porcelain-2); }
-.lang button[aria-pressed="true"] { background: var(--zellige); color: var(--porcelain); }
+.lang a:hover { background: var(--porcelain-2); }
+.lang a[aria-current="page"] { background: var(--zellige); color: var(--porcelain); cursor: default; }
 
 /* Hero */
 .hero {
