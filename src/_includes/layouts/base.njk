@@ -1,0 +1,447 @@
+{#- Shared layout for every language of the homepage (and, from Phase 1 on,
+    every other page). All body copy comes from src/_data/i18n/{lang}.json
+    via the `t` computed value (src/_data/eleventyComputed.js) -- do not
+    hardcode strings here. See .eleventy.js for the translationKey
+    convention this depends on. -#}
+{%- set siblings = collections.pages | byTranslationKey(translationKey) | sortByLangOrder(site.languages) -%}
+{%- set defaultSibling = siblings | findByLang(site.defaultLang) -%}
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ t.meta.title }}</title>
+    <meta name="description" content="{{ t.meta.description }}">
+    <!-- LAUNCH CHECKLIST: search the built output for LAUNCH- and replace every hit.
+         1. LAUNCH-DOMAIN  -> your live domain, e.g. atlassmilemorocco.com (no https://, no trailing slash). Set it in src/_data/site.js.
+         2. LAUNCH-FORM-ID -> your Formspree form ID (the form shows a visible error until you do). Set it in src/_data/site.js.
+         This site is built with Eleventy from src/ -- see README.md.
+         Body copy lives once per language in src/_data/i18n/{fr,en,es}.json;
+         shared markup lives once in src/_includes/layouts/base.njk.
+         Do not hand-edit the generated _site/ output. -->
+    <link rel="canonical" href="https://{{ site.domain }}{{ page.url }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+    {% for s in siblings -%}
+    <link rel="alternate" hreflang="{{ s.data.lang }}" href="https://{{ site.domain }}{{ s.url }}">
+    {% endfor -%}
+    <link rel="alternate" hreflang="x-default" href="https://{{ site.domain }}{{ defaultSibling.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ site.businessName }}">
+    <meta property="og:locale" content="{{ t.meta.ogLocale }}">
+    {% for loc in t.meta.ogLocaleAlt -%}
+    <meta property="og:locale:alternate" content="{{ loc }}">
+    {% endfor -%}
+    <meta property="og:url" content="https://{{ site.domain }}{{ page.url }}">
+    <meta property="og:title" content="{{ t.meta.title }}">
+    <meta property="og:description" content="{{ t.meta.description }}">
+    <meta property="og:image" content="https://{{ site.domain }}/images/og-share.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ t.meta.title }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="theme-color" content="{{ site.themeColor }}">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon fill='%230E4A45' points='23,12 16.6,13.9 19.8,19.8 13.9,16.6 12,23 10.1,16.6 4.2,19.8 7.4,13.9 1,12 7.4,10.1 4.2,4.2 10.1,7.4 12,1 13.9,7.4 19.8,4.2 16.6,10.1'/%3E%3C/svg%3E">
+
+    <!-- Self-hosted fonts (docs/SEO-PLAN.md §9): preload the two families
+         used above the fold (Instrument Sans for nav/hero copy/buttons,
+         Young Serif for the hero h1). font-display: swap is declared with
+         the @font-face rules in styles.css. No Google Fonts request. -->
+    <link rel="preload" href="{{ '/fonts/instrument-sans-latin-variable.woff2' | relUrl(page.url) }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/fonts/young-serif-latin-400.woff2' | relUrl(page.url) }}" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="{{ '/styles.css' | relUrl(page.url) }}">
+    <script>document.documentElement.classList.add('js');</script>
+
+    <!-- TravelAgency schema, sitewide (docs/SEO-PLAN.md §5). The agency is
+         NEVER marked up as MedicalClinic/Dentist -- the partner clinic is a
+         separate entity added in Phase 1. -->
+    <script type="application/ld+json">{{ orgSchema | dump | safe }}</script>
+    {%- if breadcrumbSchema %}
+    <script type="application/ld+json">{{ breadcrumbSchema | dump | safe }}</script>
+    {%- endif %}
+</head>
+<body id="top">
+
+    <!-- Shared graphics: star mark, pointed-arch clip, zellige tile patterns, illustrated scenes -->
+    <svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="star" viewBox="0 0 24 24">
+                <polygon fill="currentColor" points="23,12 16.6,13.9 19.8,19.8 13.9,16.6 12,23 10.1,16.6 4.2,19.8 7.4,13.9 1,12 7.4,10.1 4.2,4.2 10.1,7.4 12,1 13.9,7.4 19.8,4.2 16.6,10.1"/>
+            </symbol>
+
+            <clipPath id="arch" clipPathUnits="objectBoundingBox">
+                <path d="M0 1 V0.44 C0 0.22 0.34 0.1 0.5 0 C0.66 0.1 1 0.22 1 0.44 V1 Z"/>
+            </clipPath>
+
+            <!-- Zellige tile: eight-point star on a 60px square -->
+            <pattern id="tileGreen" width="60" height="60" patternUnits="userSpaceOnUse">
+                <rect width="60" height="60" fill="#0E4A45"/>
+                <path d="M30 4.5 L37.5 12 L48 12 L48 22.5 L55.5 30 L48 37.5 L48 48 L37.5 48 L30 55.5 L22.5 48 L12 48 L12 37.5 L4.5 30 L12 22.5 L12 12 L22.5 12 Z" fill="#F5F7F4"/>
+                <circle cx="30" cy="30" r="7" fill="#E8B23A"/>
+                <g fill="#2456C9">
+                    <path d="M0 -7 L7 0 L0 7 L-7 0 Z"/>
+                    <path d="M60 -7 L67 0 L60 7 L53 0 Z"/>
+                    <path d="M0 53 L7 60 L0 67 L-7 60 Z"/>
+                    <path d="M60 53 L67 60 L60 67 L53 60 Z"/>
+                </g>
+            </pattern>
+            <pattern id="tileCobalt" width="60" height="60" patternUnits="userSpaceOnUse">
+                <rect width="60" height="60" fill="#2456C9"/>
+                <path d="M30 4.5 L37.5 12 L48 12 L48 22.5 L55.5 30 L48 37.5 L48 48 L37.5 48 L30 55.5 L22.5 48 L12 48 L12 37.5 L4.5 30 L12 22.5 L12 12 L22.5 12 Z" fill="#F5F7F4"/>
+                <circle cx="30" cy="30" r="7" fill="#0E4A45"/>
+                <g fill="#E8B23A">
+                    <path d="M0 -7 L7 0 L0 7 L-7 0 Z"/>
+                    <path d="M60 -7 L67 0 L60 7 L53 0 Z"/>
+                    <path d="M0 53 L7 60 L0 67 L-7 60 Z"/>
+                    <path d="M60 53 L67 60 L60 67 L53 60 Z"/>
+                </g>
+            </pattern>
+            <pattern id="tileSaffron" width="60" height="60" patternUnits="userSpaceOnUse">
+                <rect width="60" height="60" fill="#E8B23A"/>
+                <path d="M30 4.5 L37.5 12 L48 12 L48 22.5 L55.5 30 L48 37.5 L48 48 L37.5 48 L30 55.5 L22.5 48 L12 48 L12 37.5 L4.5 30 L12 22.5 L12 12 L22.5 12 Z" fill="#F5F7F4"/>
+                <circle cx="30" cy="30" r="7" fill="#2456C9"/>
+                <g fill="#0E4A45">
+                    <path d="M0 -7 L7 0 L0 7 L-7 0 Z"/>
+                    <path d="M60 -7 L67 0 L60 7 L53 0 Z"/>
+                    <path d="M0 53 L7 60 L0 67 L-7 60 Z"/>
+                    <path d="M60 53 L67 60 L60 67 L53 60 Z"/>
+                </g>
+            </pattern>
+        </defs>
+    </svg>
+
+    <a class="skip-link" href="#main">{{ t.skipLink }}</a>
+
+    <header class="site-header" data-header>
+        <div class="wrap header-inner">
+            <a class="logo" href="#top" aria-label="{{ t.logoAriaLabel }}">
+                <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+                <span>{{ site.businessName }}</span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="sr-only">{{ t.menuSrLabel }}</span>
+                <span class="menu-icon" aria-hidden="true"></span>
+            </button>
+            <nav id="site-nav" class="site-nav" aria-label="{{ t.nav.ariaLabel }}">
+                <ul>
+                    {% for item in t.nav.items -%}
+                    <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+                    {% endfor -%}
+                </ul>
+                <div class="lang" role="group" aria-label="{{ t.nav.langGroupAriaLabel }}">
+                    {% for s in siblings -%}
+                    <a href="{{ s.url | relUrl(page.url) }}" lang="{{ s.data.lang }}" hreflang="{{ s.data.lang }}" aria-label="{{ site.langMeta[s.data.lang].endonym }}"{% if s.url == page.url %} aria-current="page"{% endif %}>{{ site.langMeta[s.data.lang].abbr }}</a>
+                    {% endfor -%}
+                </div>
+                <a class="btn btn-primary btn-sm" href="#plan">{{ t.nav.cta }}</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <h1>
+                        {% for line in t.hero.h1 -%}
+                        <span>{{ line }}</span>
+                        {% endfor -%}
+                    </h1>
+                    <p class="lede">{{ t.hero.lede }}</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#plan">{{ t.hero.ctaPrimary }}</a>
+                        <a class="btn btn-outline" href="#journey">{{ t.hero.ctaSecondary }}</a>
+                    </div>
+                    <ul class="assurances">
+                        {% for item in t.hero.assurances -%}
+                        <li><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg><span>{{ item }}</span></li>
+                        {% endfor -%}
+                    </ul>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="hero-arch">
+                        <svg viewBox="0 0 480 640" preserveAspectRatio="xMidYMid slice"><rect width="480" height="640" fill="url(#tileGreen)"/></svg>
+                    </div>
+                    <div class="hero-keyline"></div>
+                    <div class="doorway">
+                        {% image "hero-doorway.webp", "", { className: "scene", loading: null, fetchpriority: "high", pageUrl: page.url, sizes: "(min-width: 900px) 460px, 100vw" } %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Treatments -->
+        <section class="section" id="treatments">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>{{ t.treatments.h2 }}</h2>
+                    <p>{{ t.treatments.p }}</p>
+                </div>
+                <div class="treatments-layout">
+                    <figure class="treatments-art">
+                        <div class="arch">{% image "ceramic.webp", t.treatments.ceramicAlt, { pageUrl: page.url, sizes: "(min-width: 900px) 380px, 100vw" } %}</div>
+                    </figure>
+                    <ul class="treatment-list">
+                    {% for item in t.treatments.items -%}
+                    <li class="treatment">
+                        <svg class="swatch" viewBox="0 0 60 60" aria-hidden="true"><rect width="60" height="60" fill="url(#{{ item.swatch }})"/></svg>
+                        <h3>{{ item.h3 }}</h3>
+                        <p>{{ item.p }}</p>
+                        <a class="text-link" href="#plan" data-treatment="{{ item.key }}">{{ item.link }}</a>
+                    </li>
+                    {% endfor -%}
+                </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Morocco -->
+        <section class="section section-tint" id="why-morocco">
+            <div class="wrap why-grid">
+                <div class="why-text">
+                    <h2>{{ t.whyMorocco.h2 }}</h2>
+                    <ul class="tick-list">
+                        {% for item in t.whyMorocco.tickList -%}
+                        <li>{{ item }}</li>
+                        {% endfor -%}
+                    </ul>
+                </div>
+                <div class="duo">
+                    {% for item in t.whyMorocco.duo -%}
+                    <figure{% if loop.index == 2 %} class="duo-offset"{% endif %}>
+                        <div class="arch">
+                            {% image item.img + ".webp", item.alt, { pageUrl: page.url, sizes: "(min-width: 900px) 45vw, 100vw" } %}
+                        </div>
+                        <figcaption>{{ item.caption }}</figcaption>
+                    </figure>
+                    {% endfor -%}
+                </div>
+            </div>
+        </section>
+
+        <!-- Journey -->
+        <section class="section" id="journey">
+            <div class="wrap">
+                <div class="journey-head">
+                    <div class="section-head">
+                    <h2>{{ t.journey.h2 }}</h2>
+                    <p>{{ t.journey.p }}</p>
+                </div>
+                    <div class="journey-art"><div class="arch">{% image "arrival.webp", t.journey.artAlt, { pageUrl: page.url, sizes: "200px" } %}</div></div>
+                </div>
+
+                <div class="journey" data-journey>
+                    {% for phase in t.journey.phases -%}
+                    <div class="phase" style="--n:{{ phase.n }}">
+                        <h3 class="phase-title">{{ phase.title }}</h3>
+                        <ol class="steps"{% if phase.steps[0].num > 1 %} start="{{ phase.steps[0].num }}"{% endif %}>
+                            {% for step in phase.steps -%}
+                            <li class="step" style="--i:{{ step.num - 1 }}">
+                                <span class="step-num" aria-hidden="true">{{ step.num }}</span>
+                                <h4>{{ step.h4 }}</h4>
+                                <p>{{ step.p }}</p>
+                            </li>
+                            {% endfor -%}
+                        </ol>
+                    </div>
+                    {% endfor -%}
+                </div>
+            </div>
+        </section>
+
+        <!-- Stay -->
+        <section class="section on-dark" id="stay">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>{{ t.stay.h2 }}</h2>
+                    <p>{{ t.stay.p }}</p>
+                </div>
+                <div class="arcade">
+                    {% for item in t.stay.items -%}
+                    <figure>
+                        <div class="arch">{% image item.img + ".webp", item.alt, { pageUrl: page.url, sizes: "(min-width: 1000px) 25vw, (min-width: 560px) 50vw, 100vw" } %}</div>
+                        <figcaption>
+                            <h3>{{ item.h3 }}</h3>
+                            <ul>{% for li in item.list %}<li>{{ li }}</li>{% endfor %}</ul>
+                        </figcaption>
+                    </figure>
+                    {% endfor -%}
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages -->
+        <section class="section" id="packages">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2>{{ t.packages.h2 }}</h2>
+                    <p>{{ t.packages.p }}</p>
+                </div>
+                <div class="package-panel">
+                    {% for item in t.packages.items -%}
+                    <article class="package">
+                        <div class="package-art"><div class="arch">{% image item.img + ".webp", item.alt, { pageUrl: page.url, sizes: "220px" } %}</div></div>
+                        <h3>{{ item.h3 }}</h3>
+                        <ul class="tick-list">
+                            {% for li in item.list -%}
+                            <li>{{ li }}</li>
+                            {% endfor -%}
+                        </ul>
+                        <a class="btn btn-primary" href="#plan" data-package="{{ item.key }}">{{ item.cta }}</a>
+                    </article>
+                    {% endfor -%}
+                </div>
+            </div>
+        </section>
+
+        <!-- International patients -->
+        <section class="section section-tint" id="international">
+            <div class="wrap patients-grid">
+                <div>
+                    <div class="section-head">
+                        <h2>{{ t.international.h2 }}</h2>
+                        <p>{{ t.international.p }}</p>
+                    </div>
+                    <svg class="route" viewBox="0 0 400 280" role="img" aria-label="{{ t.international.routeAriaLabel }}">
+                        <g fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round">
+                            <path d="M300 34 C 280 120, 200 150, 128 162"/>
+                            <path d="M330 236 C 290 190, 210 176, 136 172"/>
+                        </g>
+                        <circle cx="300" cy="34" r="6" fill="#2456C9"/>
+                        <circle cx="330" cy="236" r="6" fill="#2456C9"/>
+                        <use href="#star" x="102" y="146" width="36" height="36" style="color:#E8B23A"/>
+                        <text x="312" y="38">{{ t.international.routeLabels.europe }}</text>
+                        <text x="342" y="240">{{ t.international.routeLabels.africa }}</text>
+                        <text x="120" y="208" text-anchor="middle">{{ t.international.routeLabels.morocco }}</text>
+                    </svg>
+                </div>
+                <div class="patients-detail">
+                    {% for origin in t.international.origins -%}
+                    <div class="origin">
+                        <h3>{{ origin.h3 }}</h3>
+                        {% if origin.p -%}
+                        <p>{{ origin.p }}</p>
+                        {% endif -%}
+                        {% if origin.list -%}
+                        <ul class="tick-list">
+                            {% for li in origin.list -%}
+                            <li>{{ li }}</li>
+                            {% endfor -%}
+                        </ul>
+                        {% endif -%}
+                    </div>
+                    {% endfor -%}
+                </div>
+            </div>
+        </section>
+
+        <!-- Plan request -->
+        <section class="section on-dark" id="plan">
+            <div class="wrap plan-grid">
+                <div class="plan-copy">
+                    <h2>{{ t.plan.h2 }}</h2>
+                    <p>{{ t.plan.p }}</p>
+                    <p class="plan-note">{{ t.plan.note }}</p>
+                    <figure class="plan-art">
+                        <div class="arch">{% image "consultation.webp", t.plan.artAlt, { pageUrl: page.url, sizes: "300px" } %}</div>
+                    </figure>
+                </div>
+
+                <!-- Replace LAUNCH-FORM-ID with your Formspree form ID (or point action at any endpoint that accepts a POST).
+                     Until then scripts.js blocks submission and shows a visible error instead of losing the lead. -->
+                <form class="form-panel" id="plan-form" action="https://formspree.io/f/{{ site.formId }}" method="POST">
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="name">{{ t.plan.form.labels.name }}</label>
+                            <input id="name" name="name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">{{ t.plan.form.labels.email }}</label>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="whatsapp">{{ t.plan.form.labels.whatsapp }} <span class="hint">{{ t.plan.form.labels.whatsappHint }}</span></label>
+                            <input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel">
+                        </div>
+                        <div class="field">
+                            <label for="country">{{ t.plan.form.labels.country }}</label>
+                            <input id="country" name="country" type="text" autocomplete="country-name" required>
+                        </div>
+                        <div class="field">
+                            <label for="treatment">{{ t.plan.form.labels.treatment }}</label>
+                            <select id="treatment" name="treatment">
+                                {% for opt in t.plan.form.treatmentOptions -%}
+                                <option value="{{ opt.v }}">{{ opt.l }}</option>
+                                {% endfor -%}
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="package">{{ t.plan.form.labels.package }}</label>
+                            <select id="package" name="package">
+                                {% for opt in t.plan.form.packageOptions -%}
+                                <option value="{{ opt.v }}">{{ opt.l }}</option>
+                                {% endfor -%}
+                            </select>
+                        </div>
+                        <div class="field field-wide">
+                            <label for="dates"><span>{{ t.plan.form.labels.dates }}</span> <span class="hint">{{ t.plan.form.labels.datesHint }}</span></label>
+                            <input id="dates" name="dates" type="text" placeholder="{{ t.plan.form.datesPlaceholder }}">
+                        </div>
+                        <div class="field field-wide">
+                            <label for="message">{{ t.plan.form.labels.message }}</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                    </div>
+                    <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off" aria-hidden="true">
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">{{ t.plan.form.submit }}</button>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <svg class="footer-band" width="100%" height="60" aria-hidden="true"><rect width="100%" height="100%" fill="url(#tileGreen)"/></svg>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a class="logo" href="#top">
+                        <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true"><use href="#star"/></svg>
+                        <span>{{ site.businessName }}</span>
+                    </a>
+                    <p>{{ t.footer.tagline }}</p>
+                </div>
+                <nav aria-label="{{ t.footer.ariaLabel }}">
+                    <h2 class="footer-title">{{ t.footer.exploreTitle }}</h2>
+                    <ul>
+                        {% for item in t.footer.exploreLinks -%}
+                        <li><a href="#{{ item.id }}">{{ item.label }}</a></li>
+                        {% endfor -%}
+                    </ul>
+                </nav>
+                <div>
+                    <h2 class="footer-title">{{ t.footer.followTitle }}</h2>
+                    <!-- LAUNCH-SOCIAL: once the profiles exist, wrap each name in
+                         <a href="https://..." rel="me noopener" target="_blank">. Shipping href="#"
+                         gives crawlers dead links and users a jump to the top of the page. -->
+                    <ul>
+                        {% for name in t.footer.followLinks -%}
+                        <li>{{ name }}</li>
+                        {% endfor -%}
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year">2026</span> <span>{{ t.footer.copyrightSuffix }}</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ '/i18n.js' | relUrl(page.url) }}"></script>
+    <script src="{{ '/scripts.js' | relUrl(page.url) }}"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# Netlify build config (docs/SEO-PLAN.md §1, §12 Phase 0 "deploy pipeline
+# scaffold"). This file is enough for Netlify to auto-detect and build the
+# site once the repo is connected -- no site/account has been created or
+# authenticated as part of this change. See README.md "Deploying" for the
+# manual connect steps.
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA-style catch-all is NOT used here on purpose: this is a static
+# multi-page site (/, /en/, /es/) and should 404 on unknown paths, not
+# fall back to index.html.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"

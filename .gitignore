@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Eleventy build output -- generated from src/, never hand-edited or committed
+_site/
+
+# Eleventy image plugin cache
+.cache/
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db

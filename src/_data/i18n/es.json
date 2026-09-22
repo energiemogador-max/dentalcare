@@ -1,0 +1,167 @@
+{
+  "lang": "es",
+  "meta": {
+    "title": "DentalCare Morocco | Odontología premium y estancia en Marruecos",
+    "description": "Odontología premium en Marruecos para pacientes internacionales. Implantes, carillas y rehabilitación completa de la sonrisa, con organización del viaje y una estancia pensada en torno a su tratamiento.",
+    "ogLocale": "es_ES",
+    "ogLocaleAlt": ["fr_FR", "en_US"]
+  },
+  "skipLink": "Ir al contenido",
+  "logoAriaLabel": "DentalCare Morocco, volver arriba",
+  "menuSrLabel": "Menú",
+  "nav": {
+    "ariaLabel": "Principal",
+    "items": [
+      { "id": "treatments", "label": "Tratamientos" },
+      { "id": "why-morocco", "label": "Marruecos" },
+      { "id": "journey", "label": "Viaje" },
+      { "id": "stay", "label": "Estancia" },
+      { "id": "packages", "label": "Paquetes" },
+      { "id": "international", "label": "Pacientes" }
+    ],
+    "langGroupAriaLabel": "Idioma",
+    "cta": "Recibir mi plan"
+  },
+  "hero": {
+    "h1": ["Su nueva sonrisa.", "Su viaje marroquí."],
+    "lede": "Odontología premium en Marruecos para pacientes internacionales.",
+    "ctaPrimary": "Recibir mi plan de tratamiento personalizado",
+    "ctaSecondary": "Descubrir el turismo dental",
+    "assurances": ["Consulta a distancia", "Plan de tratamiento personalizado", "Asistencia para el viaje", "Atención multilingüe"]
+  },
+  "treatments": {
+    "h2": "Odontología sin fronteras",
+    "p": "Tratamientos personalizados, diseñados para pacientes internacionales.",
+    "ceramicAlt": "Zellige cortado a mano formando una estrella de ocho puntas junto a una bandeja de azulejos de cerámica",
+    "items": [
+      { "swatch": "tileGreen", "h3": "Implantes", "p": "Recupere la función y la confianza con un tratamiento de implantes personalizado.", "link": "Consultar sobre implantes", "key": "implants" },
+      { "swatch": "tileCobalt", "h3": "Carillas y odontología estética", "p": "Cree una sonrisa natural, diseñada en torno a su rostro.", "link": "Consultar sobre carillas", "key": "veneers" },
+      { "swatch": "tileSaffron", "h3": "Rehabilitación completa de la sonrisa", "p": "Planes de tratamiento completos, coordinados en torno a su estancia.", "link": "Consultar sobre rehabilitación", "key": "rehabilitation" }
+    ]
+  },
+  "whyMorocco": {
+    "h2": "Odontología avanzada. Un destino por descubrir.",
+    "tickList": [
+      "Pacientes internacionales bienvenidos",
+      "Planificación del tratamiento antes de su llegada",
+      "Comunicación en inglés, francés y árabe",
+      "Asistencia en el aeropuerto y con el alojamiento",
+      "Calendario de tratamiento organizado en torno a su viaje",
+      "Seguimiento posterior al tratamiento"
+    ],
+    "duo": [
+      { "img": "clinic", "alt": "Sala de tratamiento dental moderna con sillón verde y detalle de zellige", "caption": "Consulta dental asociada" },
+      { "img": "riad", "alt": "Patio de un riad con piscina alicatada y techo de cedro tallado", "caption": "Marruecos" }
+    ]
+  },
+  "journey": {
+    "h2": "Su viaje dental",
+    "p": "Seis pasos, desde sus primeras fotos hasta su plan de seguimiento.",
+    "artAlt": "Puerta de riad de madera tallada al anochecer, con un coche privado esperando delante",
+    "phases": [
+      {
+        "title": "Desde su casa",
+        "n": 2,
+        "steps": [
+          { "num": 1, "h4": "Consulta en línea", "p": "Envíe sus fotos, radiografías y objetivos de tratamiento." },
+          { "num": 2, "h4": "Plan personalizado", "p": "Reciba su propuesta de tratamiento y la duración estimada de la estancia." }
+        ]
+      },
+      {
+        "title": "En Marruecos",
+        "n": 3,
+        "steps": [
+          { "num": 3, "h4": "Llegada a Marruecos", "p": "Recogida en el aeropuerto y asistencia con el alojamiento." },
+          { "num": 4, "h4": "Tratamiento dental", "p": "Sus citas se organizan en torno a su itinerario." },
+          { "num": 5, "h4": "Descubra Marruecos", "p": "Disfrute de experiencias cuidadosamente seleccionadas entre las etapas del tratamiento." }
+        ]
+      },
+      {
+        "title": "De vuelta en casa",
+        "n": 1,
+        "steps": [
+          { "num": 6, "h4": "Regreso a casa", "p": "Reciba la documentación de su tratamiento y su plan de seguimiento." }
+        ]
+      }
+    ]
+  },
+  "stay": {
+    "h2": "Su tratamiento, sus vacaciones",
+    "p": "Entre cita y cita, descubra Marruecos.",
+    "items": [
+      { "img": "marrakech", "alt": "Patio en Marrakech con fuente de zellige y naranjo", "h3": "Marrakech", "list": ["Medina", "Zocos", "Jardín Majorelle", "Palacio de la Bahía"] },
+      { "img": "agafay", "alt": "Campamento privado de tiendas en el desierto de Agafay al atardecer", "h3": "Agafay", "list": ["Paisajes desérticos", "Puesta de sol", "Experiencia privada"] },
+      { "img": "casablanca", "alt": "Mezquita Hassan II y su alminar junto al Atlántico en Casablanca", "h3": "Casablanca", "list": ["Mezquita Hassan II", "Corniche", "Ciudad Art Déco"] },
+      { "img": "essaouira", "alt": "Murallas de piedra y barcas de pesca azules en Essaouira", "h3": "Essaouira", "list": ["Costa atlántica", "Medina", "Relax"] }
+    ]
+  },
+  "packages": {
+    "h2": "Paquetes",
+    "p": "No publicamos precios fijos. Cada paquete es una combinación construida en torno a su tratamiento y sus fechas.",
+    "items": [
+      { "img": "package-stay", "alt": "Habitación con cabecero de madera tallada, ropa de cama de lino y mesita de zellige", "h3": "Sonrisa + Estancia", "list": ["Tratamiento dental", "Coordinación del hotel", "Traslado al aeropuerto", "Transporte local", "Excursiones opcionales"], "cta": "Crear mi viaje dental", "key": "smile-stay" },
+      { "img": "package-discover", "alt": "Muros azul cobalto, cactus y palmeras en el Jardín Majorelle, en Marrakech", "h3": "Sonrisa + Descubrimiento", "list": ["Tratamiento dental", "Alojamiento", "Traslados", "Experiencia en Marrakech", "Visitas privadas"], "cta": "Crear mi viaje dental", "key": "smile-discover" },
+      { "img": "package-full", "alt": "Carretera costera sinuosa sobre el Atlántico al atardecer, con un olivo", "h3": "Experiencia completa en Marruecos", "list": ["Tratamiento dental", "Alojamiento", "Traslados", "Casablanca", "Marrakech", "Experiencia opcional en el desierto o la costa"], "cta": "Crear mi viaje dental", "key": "full-experience" }
+    ]
+  },
+  "international": {
+    "h2": "Pacientes internacionales",
+    "p": "Odontología de primer nivel, con puntos de entrada convenientes desde todo el mundo.",
+    "routeAriaLabel": "Rutas desde Europa y África que convergen en Marruecos",
+    "routeLabels": { "europe": "Europa", "africa": "África", "morocco": "Marruecos" },
+    "origins": [
+      { "h3": "Desde Europa", "p": "Francia, Bélgica, España, Reino Unido, Suiza, Países Bajos." },
+      { "h3": "Desde África", "p": "África Occidental, África Central, África del Norte y otros pacientes internacionales." },
+      { "h3": "Información específica", "list": ["Requisitos de viaje y documentación", "Formas de pago y moneda", "Recomendaciones de alojamiento", "Apoyo en la planificación del tratamiento"] }
+    ]
+  },
+  "plan": {
+    "h2": "Reciba su plan de tratamiento personalizado",
+    "p": "Cuéntenos qué le gustaría cambiar. Le pediremos sus fotos y radiografías, y le enviaremos su propuesta de tratamiento y la duración estimada de la estancia.",
+    "note": "Hablamos inglés, francés y árabe.",
+    "artAlt": "Dentista mostrando un plan de tratamiento en una tableta durante una consulta",
+    "form": {
+      "labels": {
+        "name": "Nombre completo",
+        "email": "Correo electrónico",
+        "whatsapp": "WhatsApp",
+        "whatsappHint": "(opcional)",
+        "country": "País",
+        "treatment": "Tratamiento",
+        "package": "Paquete",
+        "dates": "Fechas de viaje preferidas",
+        "datesHint": "(opcional)",
+        "message": "Sus objetivos de tratamiento"
+      },
+      "treatmentOptions": [
+        { "v": "not-sure", "l": "Aún no lo sé" },
+        { "v": "implants", "l": "Implantes" },
+        { "v": "veneers", "l": "Carillas y odontología estética" },
+        { "v": "rehabilitation", "l": "Rehabilitación completa de la sonrisa" }
+      ],
+      "packageOptions": [
+        { "v": "not-sure", "l": "Aún no lo sé" },
+        { "v": "smile-stay", "l": "Sonrisa + Estancia" },
+        { "v": "smile-discover", "l": "Sonrisa + Descubrimiento" },
+        { "v": "full-experience", "l": "Experiencia completa en Marruecos" }
+      ],
+      "datesPlaceholder": "Por ejemplo, marzo o las dos últimas semanas de junio",
+      "submit": "Recibir mi plan"
+    }
+  },
+  "footer": {
+    "tagline": "Odontología premium combinada con la experiencia marroquí. Transforme su sonrisa, descubra Marruecos.",
+    "exploreTitle": "Explorar",
+    "exploreLinks": [
+      { "id": "treatments", "label": "Tratamientos" },
+      { "id": "why-morocco", "label": "Marruecos" },
+      { "id": "packages", "label": "Paquetes" },
+      { "id": "international", "label": "Pacientes internacionales" },
+      { "id": "plan", "label": "Recibir mi plan" }
+    ],
+    "followTitle": "Síganos",
+    "followLinks": ["Instagram", "Facebook", "LinkedIn"],
+    "ariaLabel": "Pie de página",
+    "copyrightSuffix": "DentalCare Morocco. Hospitalidad dental premium."
+  }
+}

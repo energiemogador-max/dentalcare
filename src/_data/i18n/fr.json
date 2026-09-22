@@ -1,0 +1,167 @@
+{
+  "lang": "fr",
+  "meta": {
+    "title": "DentalCare Morocco | Soins dentaires haut de gamme et séjour au Maroc",
+    "description": "Soins dentaires haut de gamme au Maroc pour les patients internationaux. Implants, facettes et réhabilitation complète du sourire, avec organisation du voyage et un séjour pensé autour de votre traitement.",
+    "ogLocale": "fr_FR",
+    "ogLocaleAlt": ["en_US", "es_ES"]
+  },
+  "skipLink": "Aller au contenu",
+  "logoAriaLabel": "DentalCare Morocco, retour en haut de page",
+  "menuSrLabel": "Menu",
+  "nav": {
+    "ariaLabel": "Principale",
+    "items": [
+      { "id": "treatments", "label": "Traitements" },
+      { "id": "why-morocco", "label": "Le Maroc" },
+      { "id": "journey", "label": "Parcours" },
+      { "id": "stay", "label": "Séjour" },
+      { "id": "packages", "label": "Forfaits" },
+      { "id": "international", "label": "Patients" }
+    ],
+    "langGroupAriaLabel": "Langue",
+    "cta": "Obtenir mon plan"
+  },
+  "hero": {
+    "h1": ["Votre nouveau sourire.", "Votre voyage marocain."],
+    "lede": "Des soins dentaires haut de gamme au Maroc pour les patients internationaux.",
+    "ctaPrimary": "Obtenir mon plan de traitement personnalisé",
+    "ctaSecondary": "Découvrir le tourisme dentaire",
+    "assurances": ["Consultation à distance", "Plan de traitement personnalisé", "Aide au voyage", "Assistance multilingue"]
+  },
+  "treatments": {
+    "h2": "Des soins dentaires sans frontières",
+    "p": "Des traitements personnalisés, conçus pour les patients internationaux.",
+    "ceramicAlt": "Zelliges taillés à la main formant une étoile à huit branches à côté d'un plateau de carreaux en céramique",
+    "items": [
+      { "swatch": "tileGreen", "h3": "Implants", "p": "Retrouvez fonction et confiance grâce à un traitement implantaire personnalisé.", "link": "Question sur les implants", "key": "implants" },
+      { "swatch": "tileCobalt", "h3": "Facettes et dentisterie esthétique", "p": "Créez un sourire naturel, dessiné autour de votre visage.", "link": "Question sur les facettes", "key": "veneers" },
+      { "swatch": "tileSaffron", "h3": "Réhabilitation complète du sourire", "p": "Des plans de traitement complets, coordonnés autour de votre séjour.", "link": "Question sur la réhabilitation", "key": "rehabilitation" }
+    ]
+  },
+  "whyMorocco": {
+    "h2": "Des soins dentaires de pointe. Une destination à découvrir.",
+    "tickList": [
+      "Patients internationaux bienvenus",
+      "Planification du traitement avant votre arrivée",
+      "Communication en anglais, français et arabe",
+      "Aide à l'aéroport et pour l'hébergement",
+      "Calendrier de soins organisé autour de votre voyage",
+      "Suivi après le traitement"
+    ],
+    "duo": [
+      { "img": "clinic", "alt": "Salle de soins dentaires moderne avec fauteuil vert et détail en zellige", "caption": "Cabinet dentaire partenaire" },
+      { "img": "riad", "alt": "Cour de riad avec bassin carrelé et plafond en cèdre sculpté", "caption": "Maroc" }
+    ]
+  },
+  "journey": {
+    "h2": "Votre parcours dentaire",
+    "p": "Six étapes, de vos premières photos à votre plan de suivi.",
+    "artAlt": "Porte de riad en bois sculpté au crépuscule, avec une voiture privée qui attend devant",
+    "phases": [
+      {
+        "title": "Depuis chez vous",
+        "n": 2,
+        "steps": [
+          { "num": 1, "h4": "Consultation en ligne", "p": "Envoyez vos photos, vos radiographies et vos objectifs de traitement." },
+          { "num": 2, "h4": "Plan personnalisé", "p": "Recevez votre proposition de traitement et la durée estimée du séjour." }
+        ]
+      },
+      {
+        "title": "Au Maroc",
+        "n": 3,
+        "steps": [
+          { "num": 3, "h4": "Arrivée au Maroc", "p": "Accueil à l'aéroport et aide pour l'hébergement." },
+          { "num": 4, "h4": "Traitement dentaire", "p": "Vos rendez-vous sont organisés autour de votre programme." },
+          { "num": 5, "h4": "Découverte du Maroc", "p": "Profitez d'expériences soigneusement choisies entre les étapes du traitement." }
+        ]
+      },
+      {
+        "title": "De retour chez vous",
+        "n": 1,
+        "steps": [
+          { "num": 6, "h4": "Retour chez vous", "p": "Recevez votre dossier de traitement et votre plan de suivi." }
+        ]
+      }
+    ]
+  },
+  "stay": {
+    "h2": "Votre traitement, vos vacances",
+    "p": "Entre deux rendez-vous, découvrez le Maroc.",
+    "items": [
+      { "img": "marrakech", "alt": "Cour à Marrakech avec fontaine en zellige et oranger", "h3": "Marrakech", "list": ["Médina", "Souks", "Jardin Majorelle", "Palais de la Bahia"] },
+      { "img": "agafay", "alt": "Camp de tentes privé dans le désert d'Agafay au coucher du soleil", "h3": "Agafay", "list": ["Paysages désertiques", "Coucher de soleil", "Expérience privée"] },
+      { "img": "casablanca", "alt": "Mosquée Hassan II et son minaret au bord de l'Atlantique à Casablanca", "h3": "Casablanca", "list": ["Mosquée Hassan II", "Corniche", "Ville Art déco"] },
+      { "img": "essaouira", "alt": "Remparts en pierre et bateaux de pêche bleus à Essaouira", "h3": "Essaouira", "list": ["Côte atlantique", "Médina", "Détente"] }
+    ]
+  },
+  "packages": {
+    "h2": "Forfaits",
+    "p": "Nous ne publions pas de prix fixes. Chaque forfait est une combinaison construite autour de votre traitement et de vos dates.",
+    "items": [
+      { "img": "package-stay", "alt": "Chambre avec tête de lit en bois sculpté, linge de lit en lin et table de chevet en zellige", "h3": "Sourire + Séjour", "list": ["Traitement dentaire", "Coordination de l'hôtel", "Transfert aéroport", "Transports locaux", "Excursions en option"], "cta": "Construire mon parcours dentaire", "key": "smile-stay" },
+      { "img": "package-discover", "alt": "Murs bleu cobalt, cactus et palmiers au jardin Majorelle, à Marrakech", "h3": "Sourire + Découverte", "list": ["Traitement dentaire", "Hébergement", "Transferts", "Expérience à Marrakech", "Visites privées"], "cta": "Construire mon parcours dentaire", "key": "smile-discover" },
+      { "img": "package-full", "alt": "Route côtière sinueuse au-dessus de l'Atlantique au coucher du soleil, avec un olivier", "h3": "L'expérience Maroc complète", "list": ["Traitement dentaire", "Hébergement", "Transferts", "Casablanca", "Marrakech", "Expérience désert ou côte en option"], "cta": "Construire mon parcours dentaire", "key": "full-experience" }
+    ]
+  },
+  "international": {
+    "h2": "Patients internationaux",
+    "p": "Des soins dentaires de classe mondiale, avec des points d'entrée pratiques partout dans le monde.",
+    "routeAriaLabel": "Trajets depuis l'Europe et l'Afrique convergeant vers le Maroc",
+    "routeLabels": { "europe": "Europe", "africa": "Afrique", "morocco": "Maroc" },
+    "origins": [
+      { "h3": "Depuis l'Europe", "p": "France, Belgique, Espagne, Royaume-Uni, Suisse, Pays-Bas." },
+      { "h3": "Depuis l'Afrique", "p": "Afrique de l'Ouest, Afrique centrale, Afrique du Nord et autres patients internationaux." },
+      { "h3": "Informations dédiées", "list": ["Conditions de voyage et documents requis", "Modes de paiement et devise", "Recommandations d'hébergement", "Aide à la planification du traitement"] }
+    ]
+  },
+  "plan": {
+    "h2": "Obtenez votre plan de traitement personnalisé",
+    "p": "Dites-nous ce que vous souhaitez changer. Nous vous demanderons vos photos et vos radiographies, puis nous vous enverrons votre proposition de traitement et la durée estimée du séjour.",
+    "note": "Nous parlons anglais, français et arabe.",
+    "artAlt": "Dentiste présentant un plan de traitement sur une tablette lors d'une consultation",
+    "form": {
+      "labels": {
+        "name": "Nom complet",
+        "email": "E-mail",
+        "whatsapp": "WhatsApp",
+        "whatsappHint": "(facultatif)",
+        "country": "Pays",
+        "treatment": "Traitement",
+        "package": "Forfait",
+        "dates": "Dates de voyage souhaitées",
+        "datesHint": "(facultatif)",
+        "message": "Vos objectifs de traitement"
+      },
+      "treatmentOptions": [
+        { "v": "not-sure", "l": "Je ne sais pas encore" },
+        { "v": "implants", "l": "Implants" },
+        { "v": "veneers", "l": "Facettes et dentisterie esthétique" },
+        { "v": "rehabilitation", "l": "Réhabilitation complète du sourire" }
+      ],
+      "packageOptions": [
+        { "v": "not-sure", "l": "Je ne sais pas encore" },
+        { "v": "smile-stay", "l": "Sourire + Séjour" },
+        { "v": "smile-discover", "l": "Sourire + Découverte" },
+        { "v": "full-experience", "l": "L'expérience Maroc complète" }
+      ],
+      "datesPlaceholder": "Par exemple, mars ou les deux dernières semaines de juin",
+      "submit": "Obtenir mon plan"
+    }
+  },
+  "footer": {
+    "tagline": "Des soins dentaires haut de gamme associés à l'expérience marocaine. Transformez votre sourire, découvrez le Maroc.",
+    "exploreTitle": "Explorer",
+    "exploreLinks": [
+      { "id": "treatments", "label": "Traitements" },
+      { "id": "why-morocco", "label": "Le Maroc" },
+      { "id": "packages", "label": "Forfaits" },
+      { "id": "international", "label": "Patients internationaux" },
+      { "id": "plan", "label": "Obtenir mon plan" }
+    ],
+    "followTitle": "Nous suivre",
+    "followLinks": ["Instagram", "Facebook", "LinkedIn"],
+    "ariaLabel": "Pied de page",
+    "copyrightSuffix": "DentalCare Morocco. Hospitalité dentaire haut de gamme."
+  }
+}

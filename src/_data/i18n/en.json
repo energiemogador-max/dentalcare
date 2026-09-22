@@ -1,0 +1,167 @@
+{
+  "lang": "en",
+  "meta": {
+    "title": "DentalCare Morocco | Premium dental care and a Moroccan stay",
+    "description": "Premium dental care in Morocco for international patients. Implants, veneers and full smile rehabilitation, with travel planning and a stay built around your treatment.",
+    "ogLocale": "en_US",
+    "ogLocaleAlt": ["fr_FR", "es_ES"]
+  },
+  "skipLink": "Skip to content",
+  "logoAriaLabel": "DentalCare Morocco, back to top",
+  "menuSrLabel": "Menu",
+  "nav": {
+    "ariaLabel": "Main",
+    "items": [
+      { "id": "treatments", "label": "Treatments" },
+      { "id": "why-morocco", "label": "Why Morocco" },
+      { "id": "journey", "label": "Your journey" },
+      { "id": "stay", "label": "Your stay" },
+      { "id": "packages", "label": "Packages" },
+      { "id": "international", "label": "Patients" }
+    ],
+    "langGroupAriaLabel": "Language",
+    "cta": "Get my plan"
+  },
+  "hero": {
+    "h1": ["Your new smile.", "Your Moroccan journey."],
+    "lede": "Premium dental care in Morocco for international patients.",
+    "ctaPrimary": "Get my personalized treatment plan",
+    "ctaSecondary": "Explore dental tourism",
+    "assurances": ["Remote consultation", "Personalized treatment plan", "Travel assistance", "Multilingual support"]
+  },
+  "treatments": {
+    "h2": "Dental care without borders",
+    "p": "Personalized treatments designed for international patients.",
+    "ceramicAlt": "Hand-cut zellige tiles forming an eight-point star beside a tray of ceramic tiles",
+    "items": [
+      { "swatch": "tileGreen", "h3": "Implants", "p": "Restore function and confidence with personalized implant treatment.", "link": "Ask about implants", "key": "implants" },
+      { "swatch": "tileCobalt", "h3": "Veneers and cosmetic dentistry", "p": "Create a natural-looking smile designed around your face.", "link": "Ask about veneers", "key": "veneers" },
+      { "swatch": "tileSaffron", "h3": "Full smile rehabilitation", "p": "Comprehensive treatment plans coordinated around your stay.", "link": "Ask about rehabilitation", "key": "rehabilitation" }
+    ]
+  },
+  "whyMorocco": {
+    "h2": "Advanced dental care. A destination worth discovering.",
+    "tickList": [
+      "International patients welcome",
+      "Treatment planning before arrival",
+      "English, French and Arabic communication",
+      "Airport and accommodation assistance",
+      "Treatment schedule organized around travel",
+      "Post-treatment follow-up"
+    ],
+    "duo": [
+      { "img": "clinic", "alt": "Modern dental treatment room with a green chair and zellige tile detail", "caption": "Partner dental practice" },
+      { "img": "riad", "alt": "Riad courtyard with a tiled plunge pool and carved cedar ceiling", "caption": "Morocco" }
+    ]
+  },
+  "journey": {
+    "h2": "Your dental journey",
+    "p": "Six steps, from your first photos to your follow-up plan.",
+    "artAlt": "Carved wooden riad door at dusk with a private car waiting outside",
+    "phases": [
+      {
+        "title": "From home",
+        "n": 2,
+        "steps": [
+          { "num": 1, "h4": "Online consultation", "p": "Send your photos, X-rays and treatment goals." },
+          { "num": 2, "h4": "Personalized plan", "p": "Receive your proposed treatment and estimated stay." }
+        ]
+      },
+      {
+        "title": "In Morocco",
+        "n": 3,
+        "steps": [
+          { "num": 3, "h4": "Arrive in Morocco", "p": "Airport pickup and accommodation assistance." },
+          { "num": 4, "h4": "Dental treatment", "p": "Your appointments are organized around your itinerary." },
+          { "num": 5, "h4": "Discover Morocco", "p": "Enjoy carefully selected experiences between treatment stages." }
+        ]
+      },
+      {
+        "title": "Back home",
+        "n": 1,
+        "steps": [
+          { "num": 6, "h4": "Return home", "p": "Receive your treatment documentation and follow-up plan." }
+        ]
+      }
+    ]
+  },
+  "stay": {
+    "h2": "Your treatment, your holiday",
+    "p": "Between appointments, discover Morocco.",
+    "items": [
+      { "img": "marrakech", "alt": "Courtyard in Marrakech with a tiled fountain and orange tree", "h3": "Marrakech", "list": ["Medina", "Souks", "Majorelle Garden", "Bahia Palace"] },
+      { "img": "agafay", "alt": "Private tent camp in the Agafay desert at sunset", "h3": "Agafay", "list": ["Desert landscapes", "Sunset", "Private experience"] },
+      { "img": "casablanca", "alt": "Hassan II Mosque and its minaret beside the Atlantic in Casablanca", "h3": "Casablanca", "list": ["Hassan II Mosque", "Corniche", "Art Deco city"] },
+      { "img": "essaouira", "alt": "Stone ramparts and blue fishing boats at Essaouira", "h3": "Essaouira", "list": ["Atlantic coast", "Medina", "Relaxation"] }
+    ]
+  },
+  "packages": {
+    "h2": "Packages",
+    "p": "We don't publish fixed prices. Each package is a combination built around your treatment and your dates.",
+    "items": [
+      { "img": "package-stay", "alt": "Guest room with a carved wooden headboard, linen bedding and a tiled side table", "h3": "Smile + Stay", "list": ["Dental treatment", "Hotel coordination", "Airport transfer", "Local transportation", "Optional tours"], "cta": "Build my dental journey", "key": "smile-stay" },
+      { "img": "package-discover", "alt": "Cobalt-blue walls, cacti and palms in the Majorelle Garden, Marrakech", "h3": "Smile + Discover", "list": ["Dental treatment", "Accommodation", "Transfers", "Marrakech experience", "Private sightseeing"], "cta": "Build my dental journey", "key": "smile-discover" },
+      { "img": "package-full", "alt": "Winding coastal road above the Atlantic at sunset with an olive tree", "h3": "Full Morocco experience", "list": ["Dental treatment", "Accommodation", "Transfers", "Casablanca", "Marrakech", "Optional desert or coast experience"], "cta": "Build my dental journey", "key": "full-experience" }
+    ]
+  },
+  "international": {
+    "h2": "International patients",
+    "p": "World-class dental care with convenient entry points from around the globe.",
+    "routeAriaLabel": "Routes from Europe and from Africa meeting in Morocco",
+    "routeLabels": { "europe": "Europe", "africa": "Africa", "morocco": "Morocco" },
+    "origins": [
+      { "h3": "From Europe", "p": "France, Belgium, Spain, UK, Switzerland, Netherlands." },
+      { "h3": "From Africa", "p": "West Africa, Central Africa, North Africa, and other international patients." },
+      { "h3": "Dedicated information", "list": ["Travel requirements and documentation", "Payment options and currency", "Accommodation guidelines", "Treatment planning support"] }
+    ]
+  },
+  "plan": {
+    "h2": "Get your personalized treatment plan",
+    "p": "Tell us what you would like to change. We'll ask for your photos and X-rays, then send your proposed treatment and estimated stay.",
+    "note": "English, French and Arabic spoken.",
+    "artAlt": "Dentist showing a treatment plan on a tablet during a consultation",
+    "form": {
+      "labels": {
+        "name": "Full name",
+        "email": "Email",
+        "whatsapp": "WhatsApp",
+        "whatsappHint": "(optional)",
+        "country": "Country",
+        "treatment": "Treatment",
+        "package": "Package",
+        "dates": "Preferred travel dates",
+        "datesHint": "(optional)",
+        "message": "Your treatment goals"
+      },
+      "treatmentOptions": [
+        { "v": "not-sure", "l": "Not sure yet" },
+        { "v": "implants", "l": "Implants" },
+        { "v": "veneers", "l": "Veneers and cosmetic dentistry" },
+        { "v": "rehabilitation", "l": "Full smile rehabilitation" }
+      ],
+      "packageOptions": [
+        { "v": "not-sure", "l": "Not sure yet" },
+        { "v": "smile-stay", "l": "Smile + Stay" },
+        { "v": "smile-discover", "l": "Smile + Discover" },
+        { "v": "full-experience", "l": "Full Morocco experience" }
+      ],
+      "datesPlaceholder": "For example, March or the last two weeks of June",
+      "submit": "Get my plan"
+    }
+  },
+  "footer": {
+    "tagline": "Premium dental care combined with the Moroccan experience. Transform your smile, discover Morocco.",
+    "exploreTitle": "Explore",
+    "exploreLinks": [
+      { "id": "treatments", "label": "Treatments" },
+      { "id": "why-morocco", "label": "Why Morocco" },
+      { "id": "packages", "label": "Packages" },
+      { "id": "international", "label": "International patients" },
+      { "id": "plan", "label": "Get my plan" }
+    ],
+    "followTitle": "Follow",
+    "followLinks": ["Instagram", "Facebook", "LinkedIn"],
+    "ariaLabel": "Footer",
+    "copyrightSuffix": "DentalCare Morocco. Premium dental hospitality."
+  }
+}

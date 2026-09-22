@@ -1,0 +1,10 @@
+# Cloudflare Pages config (docs/SEO-PLAN.md §1, §12 Phase 0 "deploy
+# pipeline scaffold"). Only used if the project is deployed via the
+# Wrangler CLI (`npx wrangler pages deploy`); a dashboard-connected Git
+# project ignores this file and instead uses the build command / output
+# directory set in the Cloudflare Pages dashboard (see README.md
+# "Deploying"). No Cloudflare account or project has been created or
+# authenticated as part of this change.
+name = "dentalcare-morocco"
+pages_build_output_dir = "_site"
+compatibility_date = "2026-09-22"

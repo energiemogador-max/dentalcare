@@ -1,0 +1,18 @@
+{
+  "name": "dentalcare-morocco",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DentalCare Morocco marketing site, built with Eleventy.",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "@11ty/eleventy-img": "7.0.0"
+  }
+}
