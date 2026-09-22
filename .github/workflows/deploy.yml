@@ -1,0 +1,63 @@
+# Builds the Eleventy site and publishes it to GitHub Pages.
+#
+# Why this exists: before the Eleventy migration the repo served its own
+# index.html straight from the branch, so GitHub Pages worked with no build.
+# Now the pages are generated into _site/, which is gitignored -- and GitHub
+# Pages only auto-builds Jekyll, not Eleventy. Without this workflow a push
+# would leave Pages with no index.html at all.
+#
+# ONE-TIME SETUP: repo Settings -> Pages -> "Build and deployment" ->
+# Source: **GitHub Actions** (not "Deploy from a branch"). Until that is
+# switched, this workflow runs but nothing is published.
+#
+# docs/SEO-PLAN.md §1 prefers Cloudflare Pages or Netlify for the real
+# launch. This keeps a working preview in the meantime with no extra
+# account; it can be deleted once a proper host is connected.
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish rather than cancelling it mid-publish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

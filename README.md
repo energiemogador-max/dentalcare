@@ -121,11 +121,32 @@ replaced before going live:
 
 ## Deploying
 
+### Right now: GitHub Pages via Actions
+
+The Eleventy migration removed the hand-written `index.html` from the repo
+root and generates pages into `_site/`, which is gitignored. GitHub Pages
+only auto-builds Jekyll, **not** Eleventy -- so without a build step a push
+would leave Pages with nothing to serve.
+
+`.github/workflows/deploy.yml` handles this: it builds on every push to
+`main` and publishes `_site/`.
+
+> **One-time setup required:** repo **Settings -> Pages -> Build and
+> deployment -> Source: "GitHub Actions"** (not "Deploy from a branch").
+> Until that's switched, the workflow runs but nothing is published.
+
+Project Pages sites serve from a `/reponame/` subpath. All asset and
+navigation paths are relative, so this works without configuration -- do not
+"fix" them to root-relative paths, that breaks subpath hosting (and opening
+files directly).
+
+### At launch: Cloudflare Pages or Netlify
+
 No hosting account has been created or authenticated as part of this
 change -- there is no domain yet either. This repo ships config for both
-recommended targets (`docs/SEO-PLAN.md` §1 -- Cloudflare Pages or Netlify,
-not GitHub Pages, so a broken build stops the site updating instead of
-silently going stale):
+recommended targets (`docs/SEO-PLAN.md` §1 -- preferred over GitHub Pages
+for the real launch, so a broken build stops the site updating instead of
+silently going stale). Once one is connected, `deploy.yml` can be deleted.
 
 **Netlify** (`netlify.toml` at the repo root): connect the repo in the
 Netlify dashboard; it auto-detects the build command (`npm run build`) and
