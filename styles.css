@@ -811,4 +811,23 @@ p { text-wrap: pretty; }
     .arcade figure { max-width: 320px; }
     .hero-actions .btn { width: 100%; }
     .footer-grid { grid-template-columns: 1fr; }
+
+    /* Menu toggle at 2x on phone widths: the 46px button and its 18px
+       bars were hard to see/tap on a real phone. Bar thickness doubles
+       too (2px -> 4px), not just length, so it reads as one icon scaled
+       up rather than a wide, thin one. Offsets and the open-state
+       translateY distances scale with it to keep the X centered.
+       --header-h grows to match: the header is position:fixed and the
+       hero's top padding + scroll-padding-top both read this variable,
+       so without the override a 92px button would push the header
+       taller than the hero expects and the two would overlap. */
+    :root { --header-h: 92px; }
+    .menu-toggle { width: 92px; height: 92px; border-width: 3px; }
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after { width: 36px; height: 4px; }
+    .menu-icon::before { top: -12px; }
+    .menu-icon::after { top: 12px; }
+    .menu-toggle[aria-expanded="true"] .menu-icon::before { transform: translateY(12px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] .menu-icon::after { transform: translateY(-12px) rotate(-45deg); }
 }
